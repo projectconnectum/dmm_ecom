@@ -303,19 +303,20 @@
                     <div class="product-row">
 
                         <div class="product-card"  *ngFor="let item of products_popular " >
-                            <div class="top">
+                            <div class="img-container">
+                                <a [routerLink]="['/main/product']" 
+                                   [queryParams]="{ id: item.id, shop_ref: item.shop_reference }">
+                                    <img [src]="item.medias[0].file" alt="" class="img-cover">
+                                </a>
+                                <!-- Icons placés en dehors du lien pour permettre les actions -->
                                 <div class="icons">
-                                    <a href="#0" class="icon fav"> <i class="fal fa-heart"></i> </a>
-                                    <a href="#0" class="icon"> <i class="fal fa-sync"></i> </a>
+                                    <a href="#0" class="select-icon" ><i class="fal fa-heart"></i></a>
+                                    <a href="#0" class="icon"><i class="fal fa-sync"></i></a>
                                     <a [href]="item.medias[0].file" class="icon" data-fancybox="gallery">
                                         <i class="fal fa-eye"></i>
                                     </a>
                                 </div>
                             </div>
-                            <a [routerLink]="['/main/product']" 
-                            [queryParams]="{ id: item.id, shop_ref: item.shop_reference }" class="img-container">
-                                <img [src]="item.medias[0].file"  alt="" class="img-cover">
-                            </a>
                             <div class="info">
                                 <a  class="product-name  fsz-14 mt-15 fw-600 hover-blue1"> {{item.name}} </a>
                                 <div class="stars fsz-13 mt-2">
