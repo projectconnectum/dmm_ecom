@@ -1,0 +1,192 @@
+<app-header></app-header>
+
+
+<div class="home-style3 sin-prod-pg-1" >
+    <div class="body-container">
+
+        <div class="container container-llgg">
+
+           
+            <!--Contents-->
+            <main>
+
+                <!--  Start breadcrumb  -->
+                <br>
+                <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                          <li class="breadcrumb-item color-999"><a routerLink="/main/home">Home</a></li>
+                          
+                          <li class="breadcrumb-item color-999"><a [routerLink]="['/main/product/categorie']" 
+                            [queryParams]="{ id: product.dmCategorie[0].dm_id, }">{{product.dmCategorie[0].name}}</a></li>
+                          <li class="breadcrumb-item active color-000" aria-current="page">{{product.categories[0].name}}</li>
+                        </ol>
+                      </nav>
+                </section>
+                <!--  End breadcrumb  -->
+
+                 <!--  Start main details  -->
+                 <section class="product-main-details p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="">
+                                <div class="swiper-container gallery-top mt-0">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="img">
+                                                <img [src]="mainImage" alt="">
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="swiper-container gallery-thumbs mt-4">
+                                    <div class="row">
+                                        <div class="col-md-4" style="width: 80px; height: 80px;" *ngFor="let item of product.medias">
+                        
+                                            <img [src]="item.file" alt="product image" role="button" (click)="changeMainImg(item.file)" class="img-fluid border rounded" style="object-fit: cover; width: 100%; height: 100%;">
+                                        
+                                            </div>
+                                    </div>
+
+                                   
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="info">
+                               
+                                <h4 class="product_title"> 
+                                    <a > {{product.name}}  </a>   
+                                </h4>
+                                <div class="price mt-20">
+                                    <h3 class="fsz-22 fw-600 color-blue1"> {{product.selling_price}} FCFA </h3>
+                                </div>
+
+                             <ul class="fsz-12 mt-15 lh-5">
+                                <li *ngFor="let item of visibleItems">
+                                    <span class="icon-6 bg-666 rounded-circle me-2"></span> {{ item }}
+                                </li>
+                            </ul>
+
+                                <div class="meta pb-20">
+                                    <a role="button" (click)="toggleView()" class="meta-item color-green2">
+                                        {{ showFullDescription ? 'Voir moins' : 'Voir plus' }}
+                                        <span class="bg bg-green2"></span>
+                                      </a>                                   
+                                </div>
+                                <div class="color-content">
+                                    <p class="color-666"> <strong class="color-000 text-uppercase me-1"> Quantité minimale: </strong> <span> {{ product.min_quantity }} </span> </p>
+                                    
+                                    <p class="color-666 mt-20"> <strong class="color-000 text-uppercase me-1"> Moyens de paiements disponibles : </strong>  </p>
+                                    <div class="d-flex flex-wrap">
+                                        <img src="assets/common/assets/imgs/payement.png" alt="'Payment method'" class="me-2 mb-2">
+                                      </div>
+                                    
+                                </div>
+
+                                <a href="#" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-30 w-100 py-3"> <span> Commander </span> </a>
+
+
+
+                                <div class="gift-card mb-20">
+                                    <div class="gift-img">
+                                        <img [src]="shopInfo.logo" alt="">
+                                    </div>
+                                    <div class="gift-info">
+                                        <ul>
+                                            <li class="fsz-14"><strong> {{shopInfo.name}} </strong> </li>     
+                                            <li>
+                                                <a role="button"  class="meta-item color-green2">
+                                                    Voir la boutique
+                                                    
+                                                    <span class="bg bg-green2"></span>
+                                                  </a>  
+                                            </li>                                     
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="social-icons mt-20">
+                                    <a href="#"> <i class="fab fa-twitter"></i> </a>
+                                    <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+                                    <a href="#"> <i class="fab fa-instagram"></i> </a>
+                                    <a href="#"> <i class="fab fa-youtube"></i> </a>
+                                    <a href="#"> <i class="fab fa-dribbble"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </section>
+                <!--  End main details  -->
+            
+
+               <br>
+                
+                    <!--  related  product -->
+                    <section class="tc-suggest-today-style1 radius-4 bg-white">
+                        <div class="container">
+                            <div class="title mb-40 wow fadeInUp slow" data-wow-delay="0.2s">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-8">
+                                        <h3 class="fsz-30"> Produits populaires   </h3>
+                                    </div>
+                                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                                        <a  class="more-btn fsz-14 text-uppercase fw-500"> Tout voir <i class="fal fa-angle-right ms-1"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content wow fadeInUp slow" data-wow-delay="0.2s " id="pills-tabContent2">
+                                <div class="tab-pane fade show active" id="pills-tab3" role="tabpanel" aria-labelledby="pills-tab3-tab">
+                                    <div class="product-row">
+
+                                        <div class="product-card"  *ngFor="let item of other_product " >
+                                            <div class="top">
+                                                <div class="icons">
+                                                    <a href="#0" class="icon fav"> <i class="fal fa-heart"></i> </a>
+                                                    <a href="#0" class="icon"> <i class="fal fa-sync"></i> </a>
+                                                    <a [href]="item.medias[0].file" class="icon" data-fancybox="gallery">
+                                                        <i class="fal fa-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <a [routerLink]="['/main/product']" 
+                                            [queryParams]="{ id: item.id, shop_ref: item.shop_reference }" class="img-container">
+                                                <img [src]="item.medias[0].file"  alt="" class="img-cover">
+                                            </a>
+                                            <div class="info">
+                                                <a  class="product-name  fsz-14 mt-15 fw-600 hover-blue1"> {{item.name}} </a>
+                                                <div class="stars fsz-13 mt-2">
+                                                    
+                                                </div>
+                                                <p class="price mt-2 fsz-20 color-blue1">{{item.selling_price}} CFA </p>
+                                            </div>
+                                            <a href="#0" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
+                                        </div>
+
+                                    
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </section>
+                   
+
+
+
+             
+
+
+            </main>
+            <!--End-Contents-->
+
+        </div>
+
+    </div>
+ <app-footer></app-footer>
+</div>

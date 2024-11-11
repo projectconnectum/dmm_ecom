@@ -1,0 +1,22 @@
+<div class="product-card"   >
+    <div class="top">
+        <div class="icons">
+            <a href="#0" class="icon fav"> <i class="fal fa-heart"></i> </a>
+            <a href="#0" class="icon"> <i class="fal fa-sync"></i> </a>
+            <a [href]="product.medias[0].file" class="icon" data-fancybox="gallery">
+                <i class="fal fa-eye"></i>
+            </a>
+        </div>
+    </div>
+    <a href="../inner_pages/single_product.html" class="img th-160 mb-20 d-block">
+        <img [src]="product.medias[0].file"  alt="" class="img-contain">
+    </a>
+    <div class="info">
+        <a href="../inner_pages/single_product.html" class="product-name  fsz-14 mt-15 fw-600 hover-blue1"> {{product.name}} </a>
+        <div class="stars fsz-13 mt-2">
+            
+        </div>
+        <p class="price mt-2 fsz-20 color-blue1">{{product.selling_price}} CFA </p>
+    </div>
+    <a href="#0" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
+</div>

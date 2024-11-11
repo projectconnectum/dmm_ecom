@@ -1,0 +1,23 @@
+<div class="deal-card">
+    <div class="top">
+        <div class="icons">
+            <a href="#0" class="icon fav active"> <i class="fal fa-heart"></i> </a>
+            <a href="#0" class="icon"> <i class="fal fa-sync"></i> </a>
+            <a [href]="product.medias[0].file" class="icon" data-fancybox="gallery">
+                <i class="fal fa-eye"></i>
+            </a>
+        </div>
+        <a class="img-container" [routerLink]="['/main/product']" 
+        [queryParams]="{ id: product.id, shop_ref: product.shop_reference }">
+            <img [src]="product.medias[0].file" alt="" class="img-cover">
+        </a>
+    </div>
+    <div class="info">
+        <a class="fsz-14 mt-15 fw-600 hover-blue1 title-name">{{product.name}}</a>
+        <p class="price color-blue1 mt-2 fsz-20">{{product.selling_price}} CFA</p>
+        <div class="progress mt-20">
+            <div class="progress-bar bg-blue1" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    <a href="#0" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
+</div>

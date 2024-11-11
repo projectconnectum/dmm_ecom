@@ -1,0 +1,33 @@
+.title-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limite à 2 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em; /* Ajustez en fonction de la hauteur de ligne */
+    line-height: 1.5em; /* Hauteur de ligne pour un rendu cohérent */
+}
+
+
+.deal-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+}
+
+.img-container {
+    display: block;
+    width: 100%;
+    height: 200px; /* ajustez cette valeur selon la hauteur souhaitée pour la section image */
+    overflow: hidden;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
