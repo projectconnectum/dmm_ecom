@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="cat-content">
-                    <a role="button" class="cat-card" *ngFor="let item of categories | slice:0:8"> 
+                    <a role="button" [href]="'/main/product/cat?id=' + item.id" class="cat-card" *ngFor="let item of categories | slice:0:8"> 
                         <div class="img">
                             <img [src]="item.image?item.image:defaultImg" alt="">
                         </div>

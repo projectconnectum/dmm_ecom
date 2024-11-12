@@ -1,0 +1,110 @@
+<body class="home-style3">
+
+    <div class="body-container">
+
+        <div class="container container-llgg">
+
+           <app-header></app-header>
+
+
+            <!--Contents-->
+            <main>
+
+                <!--  Start breadcrumb  -->
+                <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                          <li class="breadcrumb-item color-999"><a href="/main/home/">Acceuil</a></li>
+                          <li class="breadcrumb-item color-999"><a >Categorie</a></li>
+                          
+                          <li class="breadcrumb-item active color-000" aria-current="page">{{selectedCat.name}}</li>
+                        </ol>
+                      </nav>
+                </section>
+                <!--  End breadcrumb  -->
+
+
+              
+
+
+
+                <!--  Start products  -->
+                <section class="tc-products-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="filters">
+                                <div class="category-box">
+                                    <h6 class="fsz-18 fw-bold text-uppercase mb-20"> {{selectedCat.name}} </h6>
+                                    <div class="cat-list pt-20">
+                                        
+                                        <ul>
+                                            <li> <a href="#"> All </a> </li>
+
+                                            <li *ngFor="let item of selectedCat.children"> <a role="button" (click)="selectCategory(item.id)"> {{item.name}} </a> </li>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            
+                            <div class="products-content">
+                                
+                                <div class="products">
+                                    <div class="row">
+                                     
+
+                                        <div class="col-lg-3" *ngFor="let item of popular_product">
+                                            
+                                            <div class="product-card">
+                                                <div class="top-inf">
+                                                    
+                                                </div>
+                                                <a  class="img" [href]="'/main/product?id=' + item.id + '&shop_ref=' + item.shop_reference">
+                                                    <img [src]="item.medias[0].file" alt="" class="img-contain main-image">
+                                                </a>
+                                                <div class="info">
+                                                    
+                                                    <h6> <a class="prod-title fsz-14 fw-bold mt-2 hover-green2 product-name"> {{item.name}} </a> </h6>
+                                                    <div class="price mt-15">
+                                                        <h5 class="fsz-18 fw-600">{{item.selling_price}} CFA </h5>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div *ngIf="popular_product.length === 0" class="empty-products">
+                                            <img src="assets/common/assets/imgs/no_product.png" alt="No products available" class="empty-image">
+                                            <h2 class="empty-message">Aucun produit trouvé</h2>
+                                            <p class="empty-subtext">Revenez bientôt ou explorez d'autres catégories.</p>
+                                          </div>
+
+                     
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--  End products  -->
+
+
+               
+
+
+            </main>
+            <!--End-Contents-->
+
+        </div>
+
+    </div>
+
+<app-footer></app-footer>
+   
+
+</body>
