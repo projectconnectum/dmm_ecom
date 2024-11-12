@@ -1,0 +1,24 @@
+<ng-container>
+    <div class="img-container">
+        <a class="img-container" 
+        [href]="'/main/product?id=' + product.id + '&shop_ref=' + product.shop_reference">
+         <img [src]="product.medias[0].file" alt="" class="img-cover">
+        </a>
+        <!-- Icons placés en dehors du lien pour permettre les actions -->
+        <div class="icons">
+            <a href="#0" class="select-icon" ><i class="fal fa-heart"></i></a>
+            <a href="#0" class="icon"><i class="fal fa-sync"></i></a>
+            <a [href]="product.medias[0].file" class="icon" data-fancybox="gallery">
+                <i class="fal fa-eye"></i>
+            </a>
+        </div>
+    </div>
+    <div class="info">
+        <a  class="product-name  fsz-14 mt-15 fw-600 hover-blue1"> {{product.name}} </a>
+        <div class="stars fsz-13 mt-2">
+            
+        </div>
+        <p class="price mt-2 fsz-20 color-blue1">{{product.selling_price}} CFA </p>
+    </div>
+    <a href="#0" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
+</ng-container>

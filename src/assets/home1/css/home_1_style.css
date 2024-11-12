@@ -782,9 +782,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #fff;
-  background: -webkit-gradient(linear, left bottom, left top, from(#fff), color-stop(#fff), to(transparent));
-  background: linear-gradient(to top, #fff, #fff, transparent);
+
+  
   border-radius: 0 0 10px 10px;
   padding: 15px;
   z-index: 10;
@@ -1013,8 +1012,7 @@
   left: 0;
   width: 100%;
   background-color: #fff;
-  background: -webkit-gradient(linear, left bottom, left top, from(#fff), color-stop(#fff), to(transparent));
-  background: linear-gradient(to top, #fff, #fff, transparent);
+ 
   border-radius: 0 0 10px 10px;
   padding: 15px;
   z-index: 10;

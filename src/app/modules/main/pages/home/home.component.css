@@ -47,23 +47,30 @@
 .select-icon{
   color: #fff;
   background-color: var(--color-blue1);
-  border-radius: 50%;
+  border-radius: 100%;
 
 }
 
-.product-card .icons a{
+.product-card .icons a {
+  width: 36px; /* Taille fixe pour la largeur */
+  height: 36px; /* Même taille pour la hauteur */
   padding: 5px;
-  border-radius: 50%;
-  border-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centre le contenu */
+  border-radius: 50%; /* Forme circulaire */
+  background-color: transparent; /* Transparence par défaut */
+  color: black; /* Couleur par défaut */
+  border: 1px solid black; /* Bordure */
+  transition: background-color 0.3s, color 0.3s; /* Transition pour l'effet hover */
 }
 
 .product-card .icons a:hover {
-  color: #fff;
-  background-color: var(--color-blue1);
-  border-radius: 100%;
- 
-  border-color: black;
+  background-color: var(--color-blue1); /* Couleur de fond au survol */
+  color: #fff; /* Couleur de texte au survol */
+  border: none;
 }
+
 
 
 

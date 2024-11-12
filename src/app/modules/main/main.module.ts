@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductCard2Component } from './components/product-card2/product-card2.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductByCatComponent } from './pages/product-by-cat/product-by-cat.component';
+import { ProductMainCardComponent } from './components/product-main-card/product-main-card.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ProductByCatComponent } from './pages/product-by-cat/product-by-cat.com
     FooterComponent,
     ProductCard2Component,
     ProductDetailComponent,
-    ProductByCatComponent
+    ProductByCatComponent,
+    ProductMainCardComponent
   ],
   imports: [
     CommonModule,
