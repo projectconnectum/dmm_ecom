@@ -86,27 +86,10 @@
                                     
                                 </div>
 
-                                <a href="#" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-30 w-100 py-3"> <span> Commander </span> </a>
+                                
 
 
-
-                                <div class="gift-card mb-20">
-                                    <div class="gift-img">
-                                        <img [src]="shopInfo.logo" alt="">
-                                    </div>
-                                    <div class="gift-info">
-                                        <ul>
-                                            <li class="fsz-14"><strong> {{shopInfo.name}} </strong> </li>     
-                                            <li>
-                                                <a role="button"  class="meta-item color-green2">
-                                                    Voir la boutique
-                                                    
-                                                    <span class="bg bg-green2"></span>
-                                                  </a>  
-                                            </li>                                     
-                                        </ul>
-                                    </div>
-                                </div>
+                               
                                 
                                 <div class="social-icons mt-20">
                                     <a href="#"> <i class="fab fa-twitter"></i> </a>
@@ -115,6 +98,50 @@
                                     <a href="#"> <i class="fab fa-youtube"></i> </a>
                                     <a href="#"> <i class="fab fa-dribbble"></i> </a>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="payment-side mt-5 mt-lg-0">
+                                
+                                <div class="payment-card">
+                                    <ul>
+                                        <li class="fsz-14"><strong> {{shopInfo.name}} </strong> </li>     
+                                        <li>
+                                            <a role="button"  class="meta-item color-green2">
+                                                Voir la boutique
+                                                
+                                                <span class="bg bg-green2"></span>
+                                              </a>  
+                                        </li>                                     
+                                    </ul>
+                                    <div class="brand text-center mt-30 px-5">
+                                        <img [src]="shopInfo.logo" alt="">
+                                    </div>
+                                </div>
+                                <div class="cart-card">
+                                    <strong class="fsz-16 d-block mb-20"> Votre produit </strong>
+                                    <div class="prods border-bottom">
+                                        <div class="prod-card">
+                                            <div class="img">
+                                                <img [src]="mainImage" alt="">
+                                            </div>
+                                            <div class="inf">
+                                                <p class="fsz-13 fw-bold lh-3 mb-1 product-name"> {{product.name}} </p>
+                                                <small class="fsz-12 color-666">  {{product.selling_price}} CFA </small>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="sub-total color-666 d-flex justify-content-between py-3 border-bottom"> <span> Sous Total: </span> <strong class="color-000"> {{product.selling_price}} CFA </strong> </div>
+                                    <div class="btns pt-3">
+                                        <div class="row gx-2">
+                                            <a href="#" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-30 w-100 py-3"> <span> Commander </span> </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                               
                             </div>
                         </div>
                       
