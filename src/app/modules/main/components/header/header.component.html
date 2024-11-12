@@ -115,20 +115,22 @@
                     <div class="side-nav d-none d-lg-flex">
                         <div class="icons">
                             <a href="#" class="icon-link"> <i class="las la-sync-alt"></i> </a>
-                            <a href="#" class="icon-link"> <i class="lar la-heart"></i> </a>
-                            <a href="#" class="icon-link"> <i class="las la-user"></i> </a>
+                            <a  class="icon-link"> <i class="lar la-heart"></i> </a>
+                            <a  class="icon-link"> <i class="las la-user"></i> </a>
                         </div>
-                        <div class="text-item ms-3">
-                            <small class="fsz-11 color-666 text-uppercase d-block"> welcome </small>
-                            <a href="../inner_pages/login.html" class="fsz-14 text-uppercase fw-bold"> log in / Register </a>
+                        <div class="text-item ms-3" *ngIf="user==null">
+                            <small class="fsz-11 color-666 text-uppercase d-block"> Bienvenue </small>
+                            <a href="/auth/login/" class="fsz-14 text-uppercase fw-bold"> Se connecter / S'inscrire </a>
                         </div>
-                        <div class="icons ms-4">
-                            <a href="../inner_pages/cart.html" class="icon-link"> <i class="las la-shopping-bag"></i> <span class="num">5</span> </a>
+                        <div class="text-item ms-3" *ngIf="user!=null">
+                            <small class="fsz-11 color-666 text-uppercase d-block"> Bienvenue </small>
+                            <a  class="fsz-14 text-uppercase fw-bold">  {{user.first_name}} </a>
                         </div>
-                        <div class="text-item ms-3">
-                            <small class="fsz-11 color-666 text-uppercase d-block"> cart </small>
-                            <a href="../inner_pages/cart.html" class="fsz-14 text-uppercase fw-bold"> $1,689.00 </a>
+
+                        <div class="icons ms-4" *ngIf="user!=null">
+                            <a (click)="logout()" role="button" class="icon-link"> <img src="assets/common/assets/icon/logout.png" style="width: 20px;height:20px" alt=""> </a>
                         </div>
+                      
                     </div>
                 </div>
             </nav>

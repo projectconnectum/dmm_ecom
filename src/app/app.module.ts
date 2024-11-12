@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainModule } from './modules/main/main.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainModule,
     AuthModule,
     HttpClientModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

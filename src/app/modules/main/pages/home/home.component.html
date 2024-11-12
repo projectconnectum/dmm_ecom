@@ -198,7 +198,8 @@
                                     </a>
                                 </div>
                             </div>
-                            <a  class="img th-600 mb-20 d-block">
+                          
+                            <a class="img th-600 mb-20 d-block" [href]="'/main/product?id=' + item.id + '&shop_ref=' + item.shop_reference">
                                 <img [src]="item.medias[0].file" alt="" class="img-contain">
                             </a>
                             <div class="info">
@@ -304,9 +305,9 @@
 
                         <div class="product-card"  *ngFor="let item of products_popular " >
                             <div class="img-container">
-                                <a [routerLink]="['/main/product']" 
-                                   [queryParams]="{ id: item.id, shop_ref: item.shop_reference }">
-                                    <img [src]="item.medias[0].file" alt="" class="img-cover">
+                                <a class="img-container" 
+                                [href]="'/main/product?id=' + item.id + '&shop_ref=' + item.shop_reference">
+                                 <img [src]="item.medias[0].file" alt="" class="img-cover">
                                 </a>
                                 <!-- Icons placés en dehors du lien pour permettre les actions -->
                                 <div class="icons">

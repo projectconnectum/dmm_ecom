@@ -1,0 +1,50 @@
+<main>
+    <div class="logo-container">
+        <img src="assets/home1/img/logo.png" style="width:20%; height:10%;" alt="App Logo" class="app-logo">
+    </div>
+            
+    <!-- Start login -->
+    <section class="tc-login p-5 radius-4 bg-white mt-3 mb-3">
+        <div class="row align-items-center justify-content-around">
+            <div class="col-lg-4">
+                <div class="img">
+                    <img src="assets/inner_page/img/login.svg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="login-form">
+                    <div class="title mb-30">
+                        <h3 class="color-green2 mb-10"> Bienvenue à nouveau </h3>
+                        <p class="fsz-14 text-uppercase ltspc-2 color-999"> connectez-vous pour continuer </p>
+                    </div>
+                    <form (ngSubmit)="login()" >
+                        <!-- Adresse e-mail -->
+                        <div class="form-group mb-4">
+                            <label for="">Adresse e-mail</label>
+                            <input [(ngModel)]="user.username" name="username" type="text" class="form-control" placeholder="Exemple@gmail.com" required>
+                        </div>
+
+                        <!-- Mot de passe -->
+                        <div class="form-group show_hide_password mb-4">
+                            <label for="">Mot de passe</label>
+                            <input [(ngModel)]="user.password" name="password" type="password" class="form-control" placeholder="...." required>
+                            <i class="show_pass fal fa-eye-slash"></i>
+                        </div>
+
+                        <!-- Mot de passe oublié -->
+                        <a href="#" class="d-block text-decoration-underline mt-2 color-999 fsz-13">Mot de passe oublié ?</a>
+
+                        <!-- Bouton de connexion -->
+                        <div class="btns">
+                            <button type="submit" role="button"  class="btn btn-bloc butn bg-green2 text-white radius-4 fw-500 fsz-14 text-uppercase text-center mt-40 px-5"> <span> Connexion </span> </button>
+                        </div>
+
+                        <!-- Lien d'inscription -->
+                        <a routerLink="/auth/register/" class="text-uppercase color-999 fsz-13 mt-3">nouvel utilisateur ? <span class="color-green2">Inscrivez-vous</span></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End login -->
+</main>

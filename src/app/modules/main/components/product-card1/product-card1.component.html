@@ -7,10 +7,10 @@
                 <i class="fal fa-eye"></i>
             </a>
         </div>
-        <a class="img-container" [routerLink]="['/main/product']" 
-        [queryParams]="{ id: product.id, shop_ref: product.shop_reference }">
-            <img [src]="product.medias[0].file" alt="" class="img-cover">
-        </a>
+        <a class="img-container" 
+   [href]="'/main/product?id=' + product.id + '&shop_ref=' + product.shop_reference">
+    <img [src]="product.medias[0].file" alt="" class="img-cover">
+</a>
     </div>
     <div class="info">
         <a class="fsz-14 mt-15 fw-600 hover-blue1 title-name">{{product.name}}</a>

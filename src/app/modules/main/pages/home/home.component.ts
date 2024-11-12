@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
   ){}
 
   ngOnInit(): void {
+  
     this.load();
    
     

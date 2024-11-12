@@ -14,7 +14,7 @@
                 <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb fw-bold mb-0">
-                          <li class="breadcrumb-item color-999"><a routerLink="/main/home">Home</a></li>
+                          <li class="breadcrumb-item color-999"><a href="/main/home">Home</a></li>
                           
                           <li class="breadcrumb-item color-999"><a [routerLink]="['/main/product/categorie']" 
                             [queryParams]="{ id: product.dmCategorie[0].dm_id, }">{{product.dmCategorie[0].name}}</a></li>
@@ -145,10 +145,10 @@
 
                                       <div class="product-card" *ngFor="let item of other_product">
     <div class="img-container">
-        <a [routerLink]="['/main/product']" 
-           [queryParams]="{ id: item.id, shop_ref: item.shop_reference }">
-            <img [src]="item.medias[0].file" alt="" class="img-cover">
-        </a>
+                              <a class="img-container" 
+                                [href]="'/main/product?id=' + item.id + '&shop_ref=' + item.shop_reference">
+                                 <img [src]="item.medias[0].file" alt="" class="img-cover">
+                                </a>
         <!-- Icons placés en dehors du lien pour permettre les actions -->
         <div class="icons">
             <a href="#0" class="select-icon"><i class="fal fa-heart"></i></a>
