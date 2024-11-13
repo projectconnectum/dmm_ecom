@@ -13,6 +13,10 @@ import { ProductCard2Component } from './components/product-card2/product-card2.
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductByCatComponent } from './pages/product-by-cat/product-by-cat.component';
 import { ProductMainCardComponent } from './components/product-main-card/product-main-card.component';
+import { ShopsComponent } from './pages/shops/shops.component';
+import { ShopsDetailComponent } from './pages/shops/shops-detail/shops-detail.component';
+import { ShimerComponent } from './components/shimer/shimer.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { ProductMainCardComponent } from './components/product-main-card/product
     ProductCard2Component,
     ProductDetailComponent,
     ProductByCatComponent,
-    ProductMainCardComponent
+    ProductMainCardComponent,
+    ShopsComponent,
+    ShopsDetailComponent,
+    ShimerComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

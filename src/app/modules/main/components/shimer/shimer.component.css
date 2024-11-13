@@ -1,0 +1,58 @@
+/*new shimer */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: pulse 1.5s infinite;
+  }
+  
+  .image-placeholder {
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    background-color: rgba(200, 200, 200, 0.2);
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .line {
+    height: 0.8rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(200, 200, 200, 0.2);
+    border-radius: 4px;
+  }
+  
+  .short {
+    width: 60%;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }

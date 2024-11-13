@@ -5,6 +5,8 @@ import { MainComponent } from './main.component';
 import { OrderComponent } from './pages/order/order.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductByCatComponent } from './pages/product-by-cat/product-by-cat.component';
+import { ShopsComponent } from './pages/shops/shops.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
 
@@ -16,6 +18,8 @@ const routes: Routes = [
       {path:'order',component:OrderComponent},
       {path:'product',component:ProductDetailComponent},
       {path:'product/cat',component:ProductByCatComponent},
+      {path:'shops',component:ShopsComponent},
+      {path:'profile',component:ProfileComponent},
     
 ]}]
 

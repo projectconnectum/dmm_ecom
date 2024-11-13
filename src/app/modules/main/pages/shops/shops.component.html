@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+
+<ng-container *ngIf="isLoading">
+    <app-shimer [item]="5"></app-shimer>
+   </ng-container> 
+
+
+<div class="home-style3 sin-prod-pg-1"  *ngIf="!isLoading" >
+    <div class="body-container">
+
+        <div class="container container-llgg">
+           
+            <!--Contents-->
+            <main>
+
+                <!--  Start breadcrumb  -->
+                <br>
+                <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                          <li class="breadcrumb-item color-999"><a href="/main/home">Home</a></li>
+                          
+                          <li class="breadcrumb-item color-000"><a  >Boutiques</a></li>
+                          
+                        </ol>
+                      </nav>
+                </section>
+                <!--  End breadcrumb  -->
+
+                  <section class="section-box shop-template p-30 radius-4 mt-0 bg-white mt-3 wow fadeInUp" *ngIf="!isLoading">
+                    <div class="container">
+                      <h2>liste des boutiques </h2>
+                      <div class="row align-items-center">
+                        <div class="col-lg-6 mb-30">
+                          <p class="font-md color-gray-500">Nous avons <span class="font-md-bold color-blue1"> {{shops.length }} </span> <span class="ms-3">boutiques actuellement</span></p>
+                        </div>
+                        
+                      </div>
+                      <div class="border-bottom pt-0 mb-30"></div>
+
+                      <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let item of shops">
+
+                            <div class="custom-card mt-10">
+                                <div class="d-flex align-items-center ">
+                                    <img [src]="item.logo " alt="Logo" class="rounded" width="60">
+                                   
+                                    <a class="btn btn-gray badge ms-3" 
+                                  [routerLink]="['/main/shops/product']" 
+                                  [queryParams]="{ id: item.id}">{{item.name}}</a>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="card-title">{{item.description}}</div>
+                                <div class="contact-info">
+                                    <i class="bi bi-telephone"></i> {{item.phone}}
+                                </div>
+                            </div>
+                          
+                        </div>
+          
+                       
+                      </div>
+                    </div>
+                  </section>
+
+
+        
+
+
+            </main>
+            <!--End-Contents-->
+
+        </div>
+
+    </div>
+ <app-footer></app-footer>
+</div>

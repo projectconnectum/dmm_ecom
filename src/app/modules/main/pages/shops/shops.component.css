@@ -1,0 +1,45 @@
+.custom-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.3s ease;
+    max-width: 300px;
+}
+.custom-card:hover {
+    border-color: var(--color-blue1);
+}
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.contact-info {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #3d405b;
+}
+.contact-info i {
+    margin-right: 8px;
+    color: #3d405b;
+}
+.badge {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    color: #fff;
+    background-color: #adb5bd;
+    border-radius: 8px;
+    float: right;
+}
+
+.badge:hover{
+    background-color: black;
+}
+
+
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 12px 0;
+}
