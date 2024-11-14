@@ -135,7 +135,7 @@
                                     <div class="sub-total color-666 d-flex justify-content-between py-3 border-bottom"> <span> Sous Total: </span> <strong class="color-000"> {{product.selling_price}} CFA </strong> </div>
                                     <div class="btns pt-3">
                                         <div class="row gx-2">
-                                            <a href="#" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-30 w-100 py-3"> <span> Commander </span> </a>
+                                            <a [href]="'/main/order?id=' + product.id + '&shop_ref=' + product.shop_reference" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-30 w-100 py-3"> <span> Commander </span> </a>
 
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                             <div class="title mb-40 wow fadeInUp slow" data-wow-delay="0.2s">
                                 <div class="row align-items-center">
                                     <div class="col-lg-8">
-                                        <h3 class="fsz-30"> Produits populaires   </h3>
+                                        <h3 class="fsz-30"> Produits similaires   </h3>
                                     </div>
                                     
                                 </div>

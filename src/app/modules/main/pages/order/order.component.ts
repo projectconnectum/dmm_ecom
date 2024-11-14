@@ -21,7 +21,7 @@ export class OrderComponent {
   loadItem=Array(30).fill(0);
 
   //isAuth:any=localStorage.getItem("isAuth");
-  isAuth:any=true;
+  isAuth:any="true";
 
 
 

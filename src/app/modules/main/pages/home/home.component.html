@@ -73,7 +73,7 @@
                                             <div class="info text-white">
                                                 <div class="cont">
                                                     
-                                                    <a  class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> commander </span> </a>
+                                                    <a  [href]="'/main/order?id=' + item.id + '&shop_ref=' + item.shop_reference" class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> commander </span> </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@
                                     <div class="cont">
                                        
                                     </div>
-                                    <a class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
+                                    <a [href]="'/main/order?id=' + products[3].id + '&shop_ref=' + products[3].shop_reference" class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                                     <div class="cont">
                                      
                                     </div>
-                                    <a  class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
+                                    <a [href]="'/main/order?id=' + products[4].id + '&shop_ref=' + products[4].shop_reference" class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                                     <div class="cont">
                                         
                                     </div>
-                                    <a  class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
+                                    <a [href]="'/main/order?id=' + products[5].id + '&shop_ref=' + products[5].shop_reference"  class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
                                 </div>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                                     <div class="cont">
                                        
                                     </div>
-                                    <a  class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
+                                    <a [href]="'/main/order?id=' + products[6].id + '&shop_ref=' + products[6].shop_reference" class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Commander </span> </a>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                                 </div>
                                
                             </div>
-                            <a href="#0" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
+                            <a [href]="'/main/order?id=' + item.id + '&shop_ref=' + item.shop_reference" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
                         </div>
                     </div>
                     <div class="column-sm">
@@ -228,7 +228,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-30">
-                    <a href="../inner_pages/products.html" class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Tout voir </span> </a>
+                    <a  class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Tout voir </span> </a>
                 </div>
             </div>
         </div>
@@ -326,7 +326,7 @@
                                 </div>
                                 <p class="price mt-2 fsz-20 color-blue1">{{item.selling_price}} CFA </p>
                             </div>
-                            <a href="#0" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
+                            <a [href]="'/main/order?id=' + item.id + '&shop_ref=' + item.shop_reference" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
                         </div>
 
                     

@@ -21,6 +21,8 @@
     "@fancyapps/fancybox": "^3.5.7",
     "jquery": "^3.7.1",
     "ng-angular-popup": "^0.5.2",
+    "primeicons": "^7.0.0",
+    "primeng": "^16.9.1",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.10.8",
     "tslib": "^2.3.0",

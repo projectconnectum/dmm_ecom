@@ -17,6 +17,9 @@ import { ShopsComponent } from './pages/shops/shops.component';
 import { ShopsDetailComponent } from './pages/shops/shops-detail/shops-detail.component';
 import { ShimerComponent } from './components/shimer/shimer.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { FormsModule } from '@angular/forms';
+
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    FormsModule,
+    DialogModule,
+    
   ]
 })
 export class MainModule { }
