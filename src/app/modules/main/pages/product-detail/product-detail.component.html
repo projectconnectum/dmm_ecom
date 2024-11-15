@@ -107,7 +107,8 @@
                                     <ul>
                                         <li class="fsz-14"><strong> {{shopInfo.name}} </strong> </li>     
                                         <li>
-                                            <a role="button"  class="meta-item color-green2">
+                                            <a  [routerLink]="['/main/shop/detail']" 
+                                            [queryParams]="{ id: shopInfo.id}" role="button"  class="meta-item color-green2">
                                                 Voir la boutique
                                                 
                                                 <span class="bg bg-green2"></span>

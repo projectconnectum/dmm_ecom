@@ -2,7 +2,7 @@
 
 
 <ng-container *ngIf="isLoading">
-    <app-shimer [item]="5"></app-shimer>
+    <app-shimer [item]="10"></app-shimer>
    </ng-container> 
 
 
@@ -47,7 +47,7 @@
                                     <img [src]="item.logo " alt="Logo" class="rounded" width="60">
                                    
                                     <a class="btn btn-gray badge ms-3" 
-                                  [routerLink]="['/main/shops/product']" 
+                                  [routerLink]="['/main/shop/detail']" 
                                   [queryParams]="{ id: item.id}">{{item.name}}</a>
                                 </div>
                                 <div class="divider"></div>

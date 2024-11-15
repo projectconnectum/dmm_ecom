@@ -1,18 +1,20 @@
 <div class="product-card2 mt-10">
     <div class="product-image">
       <a [href]="'/main/product?id=' + product.id + '&shop_ref=' + product.shop_reference">
-        <img [src]="product.medias[0].file" alt="img" class="img-fluid">
-        <div class="preview-icons">
-          <span class="preview-icon">
-            <a [href]="product.medias[0].file" class="icon" data-fancybox="gallery">
-                <i class="pi pi-eye"></i>
-            </a>
-          </span>
-          <span class="preview-icon">
-            <i class="pi pi-heart"></i>
-          </span>
-        </div>
+        <img [src]="product.medias[0].file" alt="img" class="img-fluid">     
       </a>
+      <div class="preview-icons">
+        <span class="preview-icon">
+          <a [href]="product.medias[0].file" class="icon" data-fancybox="gallery">
+              <i class="pi pi-eye"></i>
+          </a>
+        </span>
+        <span class="preview-icon">
+          <a role="button" (click)="addToFavorites()">
+            <i class="pi pi-heart" ></i>
+          </a>
+        </span>
+      </div>
     </div>
     <div class="product-details">
       <h3 class="product-title product-name">{{product.name}}</h3>

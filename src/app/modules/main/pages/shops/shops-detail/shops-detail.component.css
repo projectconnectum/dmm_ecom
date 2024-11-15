@@ -1,0 +1,92 @@
+.shop-profile {
+    position: relative;
+    background-color: #fff;
+  }
+  
+  .shop-banner {
+    margin-bottom: 1rem;
+  }
+  
+  .shop-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+  }
+  
+  .shop-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .shop-main-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .shop-avatar {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 0.25rem;
+  }
+  
+  .shop-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .shop-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .shop-details h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .shop-rating {
+    color: #ffc107;
+  }
+  
+  .shop-contact {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .shop-contact a {
+    color: #212529;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .shop-contact a:hover {
+    text-decoration: underline;
+  }
+  
+  .shop-contact i {
+    margin-right: 0.5rem;
+  }
+  
+  .shop-category {
+    margin-top: 1rem;
+    color: black;
+  }
+  
+  @media (max-width: 768px) {
+    .shop-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .shop-contact {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }

@@ -1,1 +1,111 @@
-<p>shops-detail works!</p>
+<main class="main" *ngIf="isLoading">
+    <app-shimer [item]="30"></app-shimer>
+  </main>
+  
+<div class="home-style3 sin-prod-pg-1" *ngIf="!isLoading" >
+
+    <app-header></app-header>
+    <div class="body-container">
+
+        <div class="container container-llgg">
+           
+            <!--Contents-->
+            <main>
+
+                <!--  Start breadcrumb  -->
+                <br> <br>
+                <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                          <li class="breadcrumb-item color-999"><a href="/main/home">Home</a></li>
+                          
+                          <li class="breadcrumb-item color-999"><a  >Shop</a></li>
+                          <li class="breadcrumb-item active color-000" aria-current="page">{{shop.name}}</li>
+                        </ol>
+                      </nav>
+                </section>
+                <!--  End breadcrumb  -->
+
+                <br> <br>
+
+                <section class="shop-profile p-30 radius-4 bg-white wow fadeInUp">
+                    <div class="container">
+                      <div class="shop-banner">
+                        <img [src]="shop.banner" alt="Shop Banner" class="img-fluid">
+                      </div>
+                      <div class="shop-info">
+                        <div class="shop-main-info">
+                          <div class="shop-avatar">
+                            <img [src]="shop.logo" alt="Shop Avatar" class="img-fluid">
+                          </div>
+                          <div class="shop-details">
+                            <h2>{{shop.name}}</h2>
+                            <div class="shop-rating">
+                              <i class="pi pi-star-fill" *ngFor="let star of [1,2,3,4,5]"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="shop-contact">
+                          <a [href]="'mailto:' + shop.email">
+                            <i class="pi pi-envelope"></i> {{shop.email}}
+                          </a>
+                          <a>
+                            <i class="pi pi-phone"></i> {{shop.phone}}
+                          </a>
+                        </div>
+                      </div>
+                      <p class="shop-category">{{shop.description}}</p>
+                    </div>
+                  </section>
+                
+               <br>
+               
+               
+                 <!--  Start details  -->
+                 <section class="product-text-details p-30 radius-4 bg-white mt-3 wow fadeInUp mb-3">
+                    <ul class="nav nav-pills mb-50" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-tab1-tab" data-bs-toggle="pill" data-bs-target="#pills-tab1">Populaires</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-tab3-tab" data-bs-toggle="pill" data-bs-target="#pills-tab3">Récents </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-tab4-tab" data-bs-toggle="pill" data-bs-target="#pills-tab4">Meilleures  ventes</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-tab1">
+                            <div class="row">
+                                <div class="col-md-3" *ngFor="let item of shop.popular_products">
+                                    <app-product-main-card [product]="item"></app-product-main-card>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-tab3">
+                            <div class="row">
+                                <div class="col-md-3" *ngFor="let item of shop.lastest_products">
+                                    <app-product-main-card [product]="item"></app-product-main-card>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-tab4">
+                            <div class="row">
+                                <div class="col-md-3" *ngFor="let item of shop.feed_products">
+                                    <app-product-main-card [product]="item"></app-product-main-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--  End details  -->
+
+
+            </main>
+            <!--End-Contents-->
+
+        </div>
+
+    </div>
+ <app-footer></app-footer>
+</div>

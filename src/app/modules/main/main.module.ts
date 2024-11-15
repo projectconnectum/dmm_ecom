@@ -20,6 +20,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { FormsModule } from '@angular/forms';
 
 import { DialogModule } from 'primeng/dialog';
+import { FavorisComponent } from './pages/favoris/favoris.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { DialogModule } from 'primeng/dialog';
     ShopsComponent,
     ShopsDetailComponent,
     ShimerComponent,
-    ProfileComponent
+    ProfileComponent,
+    FavorisComponent
   ],
   imports: [
     CommonModule,

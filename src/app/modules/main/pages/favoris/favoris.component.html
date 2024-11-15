@@ -1,0 +1,64 @@
+<div class="home-style3 profile-pg-1">
+
+
+    <div class="body-container">
+
+        <div class="container container-llgg">
+
+        <app-header></app-header>
+
+
+            <!--Contents-->
+            <main>
+
+                <!--  Start breadcrumb  -->
+                <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                          <li class="breadcrumb-item color-999"><a href="/main/home">Home</a></li>
+                
+                          <li class="breadcrumb-item active color-000" aria-current="page">favoris</li>
+                        </ol>
+                      </nav>
+                </section>
+                <!--  End breadcrumb  -->
+
+
+
+
+                <!--  Start profile  -->
+                <section class="tc-profile p-30 radius-4 bg-white mt-3 wow fadeInUp mb-3">
+                    <div class="title mb-40">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h3 class="fsz-30"> Vos produits favoris </h3>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3" *ngFor="let item of favoris ">
+                            <app-product-main-card [product]="item"></app-product-main-card>
+                        </div>
+                        <div *ngIf="favoris.length === 0" class="empty-products">
+                            <img src="assets/common/assets/imgs/no_product.png" alt="No products available" class="empty-image">
+                            <h2 class="empty-message">Aucun produit trouvé</h2>
+                            <p class="empty-subtext">Ajouter des produits et Revenez bientôt</p>
+                          </div>
+                    </div>
+                </section>
+                <!--  End profile  -->
+
+
+            </main>
+            <!--End-Contents-->
+
+        </div>
+
+    </div>
+
+ 
+    
+
+
+    </div>
