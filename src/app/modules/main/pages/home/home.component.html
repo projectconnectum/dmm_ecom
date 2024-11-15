@@ -181,23 +181,14 @@
                     </div> -->
                 </div>
                 <div class="deals-cards">
-                    <div class="column-sm">
-                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:6:8"></app-product-main-card>
+
+
+                    <div class="row">
+                        <div class="col-md-3" *ngFor="let item of products | slice:6:18">
+                            <app-product-main-card [product]="item" ></app-product-main-card>
                       
-                    </div>
-                    
-                    <div class="column-sm">
-                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:9:11"></app-product-main-card>
-                      
-                       
-                    </div>
-                    <div class="column-sm">
-                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:11:13"></app-product-main-card>
-                      
-                    </div>
-                    <div class="column-sm">
-                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:14:16"></app-product-main-card>
-                      
+                        </div>
+
                     </div>
                 </div>
                 
@@ -222,7 +213,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-3" *ngFor="let item of products | slice:14:30">
+                <div class="col-md-3" *ngFor="let item of products | slice:19:30">
                     <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
             </div>
