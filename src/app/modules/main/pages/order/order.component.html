@@ -112,12 +112,12 @@
                                   </div>
                                   <div class="d-flex justify-content-between mb-3">
                                     <span>Frais de livraison totaux</span>
-                                    <span>9.100.0 CFA</span>
+                                    <span>{{delyveryTotalPrice}} CFA</span>
                                   </div>
                                   <hr/>
                                   <div class="d-flex justify-content-between mb-4">
                                     <span class="fw-bold">Total</span>
-                                    <span class="fw-bold">25.350.0 CFA</span>
+                                    <span class="fw-bold">{{delyveryTotalPrice + totalPrice}} CFA</span>
                                   </div>
                                   <div class="form-check mb-4">
                                     <input class="form-check-input" type="checkbox" id="terms">
@@ -151,9 +151,8 @@
 
 <!--modal for livraison-->
 
-
 <p-dialog 
-  header="Delivery Mode"
+  header="Mode de Livraison"
   [(visible)]="mode_modal"
   [modal]="true"
   [closable]="true"
@@ -164,45 +163,45 @@
 >
   <div class="container mt-4 text text-dark">
 
-    <!-- Country selection -->
+    <!-- Sélection du pays -->
     <div class="mb-4">
-      <h2 class="text-dark fs-6">Select a country</h2>
+      <h2 class="text-dark fs-6">Sélectionnez un pays</h2>
 
-      <select class="form-select" [(ngModel)]="selectedCountry" >
+      <select class="form-select" [(ngModel)]="selectedCountry">
         <option *ngFor="let country of shopInfo.deliveryInfo" [value]="country.id">{{ country.name }}</option>
       </select>
     </div>
 
-    <!-- Delivery modes -->
-    <h4 class="text-dark">Available Delivery Modes</h4>
-    <p class="text-muted small mt-0">Choose a delivery mode</p>
+    <!-- Modes de livraison disponibles -->
+    <h4 class="text-dark">Modes de Livraison Disponibles</h4>
+    <p class="text-muted small mt-0">Choisissez un mode de livraison</p>
     <br>
 
-    <!-- Delivery options list -->
+    <!-- Liste des options de livraison -->
     <div class="list-group" *ngIf="selectedCountryDeliveryOptions && selectedCountryDeliveryOptions.length > 0">
       <div *ngFor="let company of selectedCountryDeliveryOptions" class="mb-3">
         
-        <!-- Company name -->
-        <h5 class="fs-6 color-prime">{{ company.name }}</h5>
+        <!-- Nom de la compagnie -->
+        <h5 class="text-bold color-blue1">{{ company.name }}</h5>
         
-        <!-- Loop through the delivery modes of the company -->
+        <!-- Boucle sur les modes de livraison de la compagnie -->
         <div *ngFor="let mode of company.deliveryMode">
           
-          <!-- Loop through each rate for this delivery mode -->
+          <!-- Boucle sur chaque tarif pour ce mode de livraison -->
           <div *ngFor="let rate of mode.deliveryRate" class="list-group-item shipping-option p-3 d-flex align-items-center justify-content-between">
             <div>
-              <h3 class="fs-5 mb-2">Delivery by {{ mode.name }}</h3>
-              <p class="mb-1">Delivery time: <strong>{{ rate.delai }} days</strong></p>
-              <p class="mb-1">Price: <strong>{{ rate.price }} FCFA / {{ rate.unit_nbr }} {{ rate.unit }}</strong></p>
-              <p class="mb-1">Delivery type: <strong class="text-success">{{ rate.option }}</strong></p>
+              <h3 class="fs-5 mb-2">Livraison par {{ mode.name }}</h3>
+              <p class="mb-1">Délai de livraison : <strong>{{ rate.delai }} jours</strong></p>
+              <p class="mb-1">Prix : <strong>{{ rate.price }} FCFA / {{ rate.unit_nbr }} {{ rate.unit }}</strong></p>
+              <p class="mb-1">Type de livraison : <strong class="text-success">{{ rate.option }}</strong></p>
               
-              <!-- Tracking availability -->
+              <!-- Disponibilité du suivi -->
               <span class="badge" [ngClass]="mode.is_tracking ? 'bg-primary' : 'bg-secondary'">
-                {{ mode.is_tracking ? 'Tracking available' : 'Tracking unavailable' }}
+                {{ mode.is_tracking ? 'Suivi disponible' : 'Suivi indisponible' }}
               </span>
             </div>
 
-            <!-- Delivery selection button -->
+            <!-- Bouton de sélection de livraison -->
             <div class="form-check">
               <input class="form-check-input custom-radio" type="radio" name="shippingOption" [value]="rate.id"
               (change)="selectDeliveryOption(company, mode, rate)"

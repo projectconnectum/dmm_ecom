@@ -7,10 +7,17 @@
     max-height: 3em; /* Ajustez en fonction de la hauteur de ligne */
     line-height: 1.5em; /* Hauteur de ligne pour un rendu cohérent */
 }
+* {
+    box-sizing: border-box; /* Applique box-sizing à tous les éléments */
+    margin: 0;
+    padding: 0;
+}
 
 .product-card {
     position: relative;
     overflow: hidden;
+    padding: 0; /* Retirer tout padding */
+    margin: 0; /* Retirer tout margin */
 }
 
 .top {
@@ -21,12 +28,15 @@
 .img-container {
     display: block;
     width: 100%;
-    height: 200Px; /* ajustez cette hauteur selon vos besoins */
+    height: 300px; /* Ajustez cette hauteur si nécessaire */
     overflow: hidden;
+    padding: 0; /* Retirer tout padding */
+    margin: 0; /* Retirer tout margin */
 }
 
 .img-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }

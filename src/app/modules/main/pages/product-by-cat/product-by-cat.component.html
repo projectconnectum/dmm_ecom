@@ -57,24 +57,7 @@
                                      
 
                                         <div class="col-lg-3" *ngFor="let item of popular_product">
-                                            
-                                            <div class="product-card">
-                                                <div class="top-inf">
-                                                    
-                                                </div>
-                                                <a  class="img" [href]="'/main/product?id=' + item.id + '&shop_ref=' + item.shop_reference">
-                                                    <img [src]="item.medias[0].file" alt="" class="img-contain main-image">
-                                                </a>
-                                                <div class="info">
-                                                    
-                                                    <h6> <a class="prod-title fsz-14 fw-bold mt-2 hover-green2 product-name"> {{item.name}} </a> </h6>
-                                                    <div class="price mt-15">
-                                                        <h5 class="fsz-18 fw-600">{{item.selling_price}} CFA </h5>
-                                                    </div>
-                                                    
-                                                    
-                                                </div>
-                                            </div>
+                                            <app-product-main-card [product]="item"></app-product-main-card>
                                         </div>
 
                                         <div *ngIf="popular_product.length === 0" class="empty-products">

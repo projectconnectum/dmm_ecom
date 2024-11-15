@@ -8,76 +8,140 @@
   }
   
 
-    
-  .product-name {
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limite à 2 lignes */
-    -webkit-box-orient: vertical;
+  .product-card2 {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #eee;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .product-card2:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Crée un rapport d'aspect 1:1 */
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card2:hover .product-image img {
+    transform: scale(1.1);
+  }
+  
+  .preview-icons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .preview-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-card2:hover .preview-icon {
+    opacity: 1;
+  }
+  
+  .preview-icon:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .preview-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .product-details {
+    margin-top: 15px;
+  }
+  
+  .product-title {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    height: 2.8em;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 3em; /* Ajustez en fonction de la hauteur de ligne */
-    line-height: 1.5em; /* Hauteur de ligne pour un rendu cohérent */
-}
-
-
-.product-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.img-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 300px; /* Ajuste cette hauteur selon tes besoins */
-}
-
-.img-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.icons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  flex-direction: column; /* Arrange les icônes verticalement */
-  gap: 8px; /* Espacement entre les icônes */
-  z-index: 1;
-}
-
-.select-icon{
-  color: #fff;
-  background-color: var(--color-blue1);
-  border-radius: 50%;
-
-}
-
-.product-card .icons a {
-  width: 36px; /* Taille fixe pour la largeur */
-  height: 36px; /* Même taille pour la hauteur */
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centre le contenu */
-  border-radius: 50%; /* Forme circulaire */
-  background-color: transparent; /* Transparence par défaut */
-  color: black; /* Couleur par défaut */
-  border: 1px solid black; /* Bordure */
-  transition: background-color 0.3s, color 0.3s; /* Transition pour l'effet hover */
-}
-
-.product-card .icons a:hover {
-  background-color: var(--color-blue1); /* Couleur de fond au survol */
-  color: #fff; /* Couleur de texte au survol */
-  border: none;
-}
-
-
-
-.info {
-  padding: 10px;
-}
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  .price-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .amount {
+    font-size: 1.5rem;
+  }
+  
+  .decimal {
+    font-size: 1rem;
+  }
+  
+  .cart-btn {
+    background: black;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cart-btn:hover {
+    background: #e88525;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .stars i {
+    color: #FD9636;
+    font-size: 0.9rem;
+  }

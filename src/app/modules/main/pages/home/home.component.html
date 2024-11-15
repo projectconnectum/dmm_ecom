@@ -182,66 +182,33 @@
                 </div>
                 <div class="deals-cards">
                     <div class="column-sm">
-                       <app-product-card1 *ngFor="let item of products | slice:7:9" [product]="item"></app-product-card1>
+                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:6:8"></app-product-main-card>
                       
                     </div>
                     
-                    <div class="column-lg">
-                        <div class="deal-card" *ngFor="let item of products | slice:9:10">
-                            <div class="top">
-                                
-                                <div class="icons">
-                                    <a href="#0" class="icon fav active"> <i class="fal fa-heart"></i> </a>
-                                    <a href="#0" class="icon"> <i class="fal fa-sync"></i> </a>
-                                    <a [href]="item.medias[0].file" class="icon" data-fancybox="gallery">
-                                        <i class="fal fa-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                          
-                            <a class="img th-600 mb-20 d-block" [href]="'/main/product?id=' + item.id + '&shop_ref=' + item.shop_reference">
-                                <img [src]="item.medias[0].file" alt="" class="img-contain">
-                            </a>
-                            <div class="info">
-                                
-                                
-                                <a  class="product-name  fsz-14 mt-15 fw-600 hover-blue1"> {{item.name}} </a>
-                                <div class="stars fsz-13 mt-2">
-                                  
-                                </div>
-                                <p class="price color-blue1 mt-2 fsz-20"> {{item.selling_price}}  </p>
-                                <div class="progress mt-20">
-                                    <div class="progress-bar bg-blue1" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                               
-                            </div>
-                            <a [href]="'/main/order?id=' + item.id + '&shop_ref=' + item.shop_reference" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
-                        </div>
+                    <div class="column-sm">
+                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:9:11"></app-product-main-card>
+                      
+                       
                     </div>
                     <div class="column-sm">
-                        <app-product-card1 *ngFor="let item of products | slice:10:12" [product]="item"></app-product-card1>
+                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:11:13"></app-product-main-card>
                       
                     </div>
                     <div class="column-sm">
-                        <app-product-card1 *ngFor="let item of products | slice:12:14" [product]="item"></app-product-card1>
+                        <app-product-main-card [product]="item" *ngFor="let item of products | slice:14:16"></app-product-main-card>
                       
                     </div>
                 </div>
-                <div class="text-center mt-30">
-                    <a  class="butn px-5 py-3 bg-white color-000 rounded-pill fw-600"> <span> Tout voir </span> </a>
-                </div>
+                
             </div>
         </div>
     </section>
     <!--  End weekly-deals  -->
 
-
-
-   
-
-
-    <!--  Start best-seller  -->
-    <section class="tc-best-seller-style1 wow fadeInUp slow" data-wow-delay="0.2s">
+ 
+     <!--  Start best-seller  -->
+     <section class="tc-best-seller-style1 wow fadeInUp slow" data-wow-delay="0.2s">
         <div class="container">
             <div class="title mb-40">
                 <div class="row align-items-center">
@@ -253,32 +220,14 @@
                     </div>
                 </div>
             </div>
-            <ul class="nav nav-pills mb-40" id="pills-tabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                  
-                </li>
-                
-              </ul>
-              <div class="tab-content" id="pills-tabContent1">
-                <div class="tab-pane fade show active" id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab">
-                    <div class="products-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" *ngFor="let item of products | slice:14:30">
-                                <app-product-card-slider [product]="item"></app-product-card-slider>
-                            </div>
-                      
-                        </div>
-                        <div class="slider-controls">
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                    </div>
+
+            <div class="row">
+                <div class="col-md-3" *ngFor="let item of products | slice:14:30">
+                    <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
+            </div>
 
-
-               
-              </div>
+            
         </div>
     </section>
     <!--  End best-seller  -->
@@ -286,9 +235,9 @@
 
 
     <!--  SPopular product -->
-    <section class="tc-suggest-today-style1">
+    <section class="tc-suggest-today-style1" data-wow-delay="0.2s">
         <div class="container">
-            <div class="title mb-40 wow fadeInUp slow" data-wow-delay="0.2s">
+            <div class="title mb-40 wow fadeInUp slow" >
                 <div class="row align-items-center">
                     <div class="col-lg-8">
                         <h3 class="fsz-30"> Produits populaires   </h3>
@@ -298,42 +247,14 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="tab-content wow fadeInUp slow" data-wow-delay="0.2s " id="pills-tabContent2">
-                <div class="tab-pane fade show active" id="pills-tab3" role="tabpanel" aria-labelledby="pills-tab3-tab">
-                    <div class="product-row">
 
-                       
-                        <div class="product-card"  *ngFor="let item of products_popular " >
-                            <div class="img-container">
-                                <a class="img-container" 
-                                [href]="'/main/product?id=' + item.id + '&shop_ref=' + item.shop_reference">
-                                 <img [src]="item.medias[0].file" alt="" class="img-cover">
-                                </a>
-                                <!-- Icons placés en dehors du lien pour permettre les actions -->
-                                <div class="icons">
-                                    <a href="#0" class="select-icon" ><i class="fal fa-heart"></i></a>
-                                    <a href="#0" class="icon"><i class="fal fa-sync"></i></a>
-                                    <a [href]="item.medias[0].file" class="icon" data-fancybox="gallery">
-                                        <i class="fal fa-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <a  class="product-name  fsz-14 mt-15 fw-600 hover-blue1"> {{item.name}} </a>
-                                <div class="stars fsz-13 mt-2">
-                                    
-                                </div>
-                                <p class="price mt-2 fsz-20 color-blue1">{{item.selling_price}} CFA </p>
-                            </div>
-                            <a [href]="'/main/order?id=' + item.id + '&shop_ref=' + item.shop_reference" class="cart-btn addCart"> <i class="la la-cart-plus me-1"></i> Commander </a>
-                        </div>
-
-                    
-                    </div>
+            <div class="row" >
+                <div class="col-md-3" *ngFor="let item of products_popular " >
+                    <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
-             
             </div>
+            
+           
         </div>
     </section>
     <!--  End suggest-today  -->
@@ -353,123 +274,21 @@
                     </div>
                 </div>
             </div>
-         
-              <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-tab5" role="tabpanel" aria-labelledby="pills-tab5-tab">
-                    <div class="products-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" *ngFor="let item of products_latest ">
-                                <app-product-card-slider [product]="item"></app-product-card-slider>
-                            </div>
-                        </div>
-                        <div class="slider-controls">
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                    </div>
+
+
+            <div class="row" data-wow-delay="0.2s">
+                <div class="col-md-3" *ngFor="let item of products_latest " >
+                    <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
-              
-              </div>
+            </div>
+         
+             
         </div>
     </section>
     <!--  End Just Landing  -->
 
 
-    <!--  Start testimonials  -->
-    <section class="tc-testimonials-style1 pb-60">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="advc-card card-gray overflow-hidden wow fadeInUp slow" data-wow-delay="0.2s">
-                        <div class="title mb-40">
-                            <div class="row align-items-center">
-                                <div class="col-lg-8">
-                                    <h3 class="fsz-30"> Just Landing </h3>
-                                </div>
-                                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                                    <a href="#" class="more-btn fsz-14 text-uppercase fw-500"> View All <i class="fal fa-angle-right ms-1"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="advc-item">
-                                        <div class="img">
-                                            <img src="assets/home1/img/blog_1.jpg" alt="" class="img-cover">
-                                        </div>
-                                        <div class="info">
-                                            <h6> <a href="#" class="fsz-18 fw-bold hover-blue1"> How to choose size of Television fit to your living room </a> </h6>
-                                            <small class="fsz-12 color-666 float-text"> 45 Minutes ago in <a href="#" class="color-000 text-uppercase"> Experience </a> </small>
-                                        </div>
-                                    </div>
-                                    <div class="advc-item">
-                                        <div class="img">
-                                            <img src="assets/home1/img/blog_2.jpg" alt="" class="img-cover">
-                                        </div>
-                                        <div class="info">
-                                            <h6> <a href="#" class="fsz-18 fw-bold hover-blue1"> Introduce New Generation of Eluxtro Washing Machine 2023 </a> </h6>
-                                            <small class="fsz-12 color-666 float-text"> 2 Days ago in <a href="#" class="color-000 text-uppercase"> Technology </a> </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonials-box card-gray overflow-hidden wow fadeInUp slow" data-wow-delay="0.4s">
-                        <div class="title mb-40">
-                            <div class="row align-items-center">
-                                <div class="col-lg-8">
-                                    <h3 class="fsz-30"> Best Selling Speakers </h3>
-                                </div>
-                                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                                    <div class="arrows">
-                                        <a href="#0" class="swiper-prev"> <i class="fal fa-chevron-left"></i> </a>
-                                        <a href="#0" class="swiper-next"> <i class="fal fa-chevron-right"></i> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-card">
-                            <div class="rate mb-20">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h6 class="fsz-18 fw-bold"> Fast shipping and flexiable price! </h6>
-                            </div>
-                            <div class="text fsz-14 mb-50">
-                                I used to have experience shopping on much platform as Amozon, Eboy, Esto, etc. And see that Swoo Market really great. It’ll be my 1st choice for any shopping experience. Competitive price, fast shipping and support 24/7. Extremely recommended!
-                            </div>
-                            <div class="btm-items">
-                                <div class="user-info">
-                                    <div class="img">
-                                        <img src="assets/home1/img/user.jpg " alt="">
-                                        <span class="icon"> <i class="fas fa-check"></i> </span>
-                                    </div>
-                                    <div class="inf">
-                                        <h6 class="fsz-18 fw-bold"> Drake N. <small class="fsz-10 color-green1 ms-1 text-uppercase"> Verified Buyer </small> </h6>
-                                        <p class="fsz-12 color-666"> Brooklyn, Los Angeles </p>
-                                    </div>
-                                </div>
-                                <a href="#" class="text-capitalize color-blue1 text-decoration-underline fsz-11 fw-600"> Marshall Standmore Speaker / Black </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--  End testimonials  -->
-
+   
 
 
     

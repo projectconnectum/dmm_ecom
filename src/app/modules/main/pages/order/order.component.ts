@@ -115,12 +115,14 @@ export class OrderComponent {
   incrementQuantity(){
     this.quantity++;
     this.updateTotale();
+    this.SetDeliveryTotalPrice();
   }
 
   decrementQuantity(){
     if(this.quantity > 1){
       this.quantity--;
       this.updateTotale();
+      this.SetDeliveryTotalPrice();
     }else{
       this.quantity = 1;
     }
@@ -131,7 +133,7 @@ export class OrderComponent {
   // deault delivery info 
 
     selectedDelivery: any = {};
-  
+    delyveryTotalPrice:any;
 
 
   selectDeliveryOption(company: any, mode: any, rate: any): void {
@@ -143,7 +145,21 @@ export class OrderComponent {
       price: rate.price,
       tracking: mode.is_tracking ? 'Suivi disponible' : 'Suivi indisponible',
     };
+
+    //set delivery taxes info ;
+    this.SetDeliveryTotalPrice();
+
     this.mode_modal = false; // Ferme le modal après sélection
+  }
+
+  SetDeliveryTotalPrice (){
+     if(this.selectedDelivery.modeName=="BATEAU"){
+      this.delyveryTotalPrice = (this.product.delivery_taxe.volume*this.selectedDelivery.price)*this.quantity;
+     }else{
+      this.delyveryTotalPrice = (this.product.delivery_taxe.poids*this.selectedDelivery.price)*this.quantity;
+     }
+
+
   }
 
 
@@ -153,8 +169,6 @@ export class OrderComponent {
 
   selectedCountry: string | null = null;
   selectedCountryDeliveryOptions: any[] = [];
-
-
 
   // whene country change 
 
