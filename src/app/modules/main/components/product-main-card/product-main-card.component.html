@@ -20,8 +20,8 @@
       <h3 class="product-title product-name">{{product.name}}</h3>
       <div class="price-cart">
         <div class="price">
-          <span class="amount">{{product.selling_price}}</span>
-          <sup class="decimal">CFA</sup>
+          <span class="amount color-blue1">{{product.selling_price}}</span>
+          <sup class="decimal color-blue1">CFA</sup>
         </div>
         <button class="cart-btn">
             <a [href]="'/main/order?id=' + product.id + '&shop_ref=' + product.shop_reference">
@@ -29,14 +29,6 @@
             </a>
         </button>
       </div>
-      <div class="rating">
-        <div class="stars">
-          <i class="pi pi-star-fill"></i>
-          <i class="pi pi-star-fill"></i>
-          <i class="pi pi-star-fill"></i>
-          <i class="pi pi-star-fill"></i>
-          <i class="pi pi-star-fill"></i>
-        </div>
-      </div>
+      
     </div>
   </div>

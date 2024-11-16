@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategorieService } from 'src/app/services/categorie.service';
 import { ProductService } from 'src/app/services/product.service';
+
 declare var $: any
 
 @Component({
@@ -9,7 +10,7 @@ declare var $: any
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit  {
+export class HomeComponent implements OnInit {
 
   categories:any[]=[];
   products:any[]=[];
@@ -210,13 +211,6 @@ export class HomeComponent implements OnInit, AfterViewInit  {
 
 
 
-    /// modal to show product 
-
-    ngAfterViewInit() {
-      // $('[data-fancybox="gallery"]').fancybox({
-      //     // Vous pouvez ajouter d'autres options ici
-      // });
-  }
   
 
   // formatage pour la description du produit 

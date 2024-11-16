@@ -77,3 +77,12 @@
 .info {
   padding: 10px;
 }
+
+
+/* carousel */
+.custom-col {
+  width: 20%; /* Chaque carte occupe 20% de la ligne */
+  float: left; /* Pour aligner les cartes dans une seule ligne */
+  padding: 0.5rem; /* Espacement entre les cartes */
+  box-sizing: border-box; /* Inclut les bordures et marges dans la largeur */
+}

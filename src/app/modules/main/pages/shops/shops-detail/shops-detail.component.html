@@ -77,21 +77,21 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-tab1">
                             <div class="row">
-                                <div class="col-md-3" *ngFor="let item of shop.popular_products">
+                                <div class="custom-col" *ngFor="let item of shop.popular_products">
                                     <app-product-main-card [product]="item"></app-product-main-card>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-tab3">
                             <div class="row">
-                                <div class="col-md-3" *ngFor="let item of shop.lastest_products">
+                                <div class="custom-col" *ngFor="let item of shop.lastest_products">
                                     <app-product-main-card [product]="item"></app-product-main-card>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-tab4">
                             <div class="row">
-                                <div class="col-md-3" *ngFor="let item of shop.feed_products">
+                                <div class="custom-col" *ngFor="let item of shop.feed_products">
                                     <app-product-main-card [product]="item"></app-product-main-card>
                                 </div>
                             </div>

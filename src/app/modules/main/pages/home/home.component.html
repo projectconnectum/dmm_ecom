@@ -21,14 +21,17 @@
 </div>
 <!--  End loader  -->
 
-<app-header></app-header>
     
 
 
 <!--Contents-->
 <main>
 
+    <app-header></app-header>
+
     <header>
+
+       
         <!--  Start popular cat  -->
         <section class="tc-popular-cat-style1 pt-30 pb-50">
             <div class="container">
@@ -47,7 +50,7 @@
                         <div class="img">
                             <img [src]="item.image?item.image:defaultImg" alt="">
                         </div>
-                        <p class="fsz-13 fw-bold mt-15"> {{item.name}} </p>
+                        <p class="fsz-11 fw-bold mt-15"> {{item.name}} </p>
                     </a>
 
 
@@ -184,7 +187,7 @@
 
 
                     <div class="row">
-                        <div class="col-md-3" *ngFor="let item of products | slice:6:18">
+                        <div class="custom-col" *ngFor="let item of products | slice:6:21">
                             <app-product-main-card [product]="item" ></app-product-main-card>
                       
                         </div>
@@ -213,11 +216,10 @@
             </div>
 
             <div class="row">
-                <div class="col-md-3" *ngFor="let item of products | slice:19:30">
+                <div class="custom-col" *ngFor="let item of products | slice:22:35">
                     <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
             </div>
-
             
         </div>
     </section>
@@ -240,7 +242,7 @@
             </div>
 
             <div class="row" >
-                <div class="col-md-3" *ngFor="let item of products_popular " >
+                <div class="custom-col" *ngFor="let item of products_popular " >
                     <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
             </div>
@@ -268,7 +270,7 @@
 
 
             <div class="row" data-wow-delay="0.2s">
-                <div class="col-md-3" *ngFor="let item of products_latest " >
+                <div class="custom-col" *ngFor="let item of products_latest " >
                     <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
             </div>
