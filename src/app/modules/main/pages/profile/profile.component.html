@@ -375,7 +375,7 @@
                                                     {{transaction.status}}
                                                   </small>
                                                   <br>
-                                                  <a *ngIf="transaction.status === 'PROCESSING'" [href]="transaction.bill_url" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                                                  <a *ngIf="transaction.status === 'PROCESSING' && transaction.provider!='CORIS'" [href]="transaction.bill_url" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
                                                     <i class="pi pi-external-link"></i> Payer
                                                   </a>
                                                 </div>

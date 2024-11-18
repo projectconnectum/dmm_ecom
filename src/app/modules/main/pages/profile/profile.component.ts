@@ -78,7 +78,10 @@ export class ProfileComponent implements OnInit{
         this.getAllRecharge();
         this.showRechargeModal=false;
          // Ouvrir l'URL de paiement dans une nouvelle fenêtre
-         window.open(payment_url, '_blank');
+         if(this.selectedPayment=="DEFAULT"){
+          window.open(payment_url, '_blank');
+         }
+        
       },
       (err)=>{
         console.log(err);
