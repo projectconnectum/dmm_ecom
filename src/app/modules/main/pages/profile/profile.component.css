@@ -1,0 +1,67 @@
+
+.walet-card{
+    background-color: var(--color-blue1);
+    border-radius: 10px;
+}
+
+.paye-card{
+    border-radius: 10pX;
+    
+    border-color: black;
+    box-shadow: 1em;
+}
+
+.paye-card img{
+    border-radius: 10pX;
+    
+}
+
+
+:host ::ng-deep {
+    .p-dialog {
+      .p-dialog-header {
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      
+      .p-dialog-content {
+        padding: 0;
+      }
+      
+      .p-dialog-footer {
+        padding: 1.5rem;
+      }
+    }
+  }
+  
+  .border-orange-500 {
+    border-color: var(--color-blue1);
+  }
+
+.amount-input{
+    border-radius: 20px;
+    border-color: black;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(25, 135, 84, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-light {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
