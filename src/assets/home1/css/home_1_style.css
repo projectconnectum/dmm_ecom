@@ -1452,6 +1452,7 @@
 /* --------------- footer style1 --------------- */
 .tc-footer-style1 .foot-content {
   padding: 60px 0;
+  background-color: black;
 }
 .tc-footer-style1 .foot-content .foot-social a {
   width: 35px;
@@ -1470,7 +1471,8 @@
 }
 .tc-footer-style1 .foot-content .links li a {
   line-height: 2;
-  color: #666;
+  color: white;
+  font-weight: bold;
 }
 .tc-footer-style1 .foot-content .links li a:hover {
   color: var(--color-blue1);
