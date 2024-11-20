@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3" *ngFor="let item of favoris ">
+                        <div class="custom-col" *ngFor="let item of favoris ">
                             <app-product-main-card [product]="item"></app-product-main-card>
                         </div>
                         <div *ngIf="favoris.length === 0" class="empty-products">

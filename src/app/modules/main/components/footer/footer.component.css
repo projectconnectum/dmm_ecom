@@ -1,0 +1,93 @@
+/* Style général du footer */
+.tc-footer-style1 {
+    background-color: black; /* Couleur de fond */
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* Images, icônes et textes */
+.tc-footer-style1 .foot-info img {
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.tc-footer-style1 h5 {
+    text-align: center;
+}
+
+.tc-footer-style1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tc-footer-style1 .links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tc-footer-style1 .links ul li {
+    margin-bottom: 10px;
+}
+
+.tc-footer-style1 .links ul li a:hover {
+    color: #007bff;
+}
+
+/* Aligner les colonnes sur desktop */
+.tc-footer-style1 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Sections individuelles */
+.tc-footer-style1 .col-lg-2,
+.tc-footer-style1 .col-lg-4 {
+    flex: 1;
+    min-width: 200px; /* Empêche les colonnes de devenir trop petites */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Centrer les textes pour les petits écrans */
+.tc-footer-style1 .links-item h6 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Pour les icônes de réseaux sociaux */
+.tc-footer-style1 .foot-social a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .tc-footer-style1 .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tc-footer-style1 .col-lg-4,
+    .tc-footer-style1 .col-lg-2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tc-footer-style1 .foot-info img {
+        width: 50%;
+    }
+
+    .tc-footer-style1 .links-item ul {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .tc-footer-style1 .links-item ul li {
+        margin-bottom: 8px;
+    }
+}
