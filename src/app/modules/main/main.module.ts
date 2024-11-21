@@ -23,6 +23,7 @@ import { DialogModule } from 'primeng/dialog';
 import { FavorisComponent } from './pages/favoris/favoris.component';
 
 
+
 @NgModule({
   declarations: [
     MainComponent,
@@ -47,6 +48,7 @@ import { FavorisComponent } from './pages/favoris/favoris.component';
     MainRoutingModule,
     FormsModule,
     DialogModule,
+   
     
   ]
 })

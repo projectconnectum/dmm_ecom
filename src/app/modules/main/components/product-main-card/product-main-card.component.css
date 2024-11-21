@@ -147,3 +147,18 @@
     color: #FD9636;
     font-size: 0.9rem;
   }
+
+  /* Pour les mobiles */
+@media (max-width: 768px) {
+ 
+  .amount {
+    font-size: 1rem;
+  }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+  .amount {
+    font-size: 1rem;
+  }
+}

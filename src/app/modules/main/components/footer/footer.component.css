@@ -1,6 +1,6 @@
 /* Style général du footer */
 .tc-footer-style1 {
-    background-color: black; /* Couleur de fond */
+    background-color: black;
     color: #fff;
     padding: 20px 0;
     font-size: 14px;
@@ -28,10 +28,7 @@
 
 .tc-footer-style1 .links ul li {
     margin-bottom: 10px;
-}
-
-.tc-footer-style1 .links ul li a:hover {
-    color: #007bff;
+    text-align: left; /* Alignement à gauche des listes par défaut */
 }
 
 /* Aligner les colonnes sur desktop */
@@ -41,23 +38,30 @@
     justify-content: space-between;
 }
 
-/* Sections individuelles */
+/* Colonnes individuelles */
 .tc-footer-style1 .col-lg-2,
 .tc-footer-style1 .col-lg-4 {
     flex: 1;
-    min-width: 200px; /* Empêche les colonnes de devenir trop petites */
+    min-width: 200px;
     margin-bottom: 20px;
-    text-align: center;
 }
 
-/* Centrer les textes pour les petits écrans */
+/* Centrer les titres et listes pour les petits écrans */
 .tc-footer-style1 .links-item h6 {
     font-size: 16px;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: left; /* Alignement à gauche sur grands écrans */
 }
 
-/* Pour les icônes de réseaux sociaux */
+.tc-footer-style1 .links-item ul {
+    padding-left: 0;
+}
+
+.tc-footer-style1 .links-item ul li {
+    margin-bottom: 8px;
+}
+
+/* Réseaux sociaux */
 .tc-footer-style1 .foot-social a {
     color: #fff;
     margin: 0 10px;
@@ -75,19 +79,12 @@
     .tc-footer-style1 .col-lg-2 {
         text-align: center;
     }
-}
 
-@media (max-width: 480px) {
-    .tc-footer-style1 .foot-info img {
-        width: 50%;
-    }
-
-    .tc-footer-style1 .links-item ul {
-        padding-left: 0;
-        text-align: center;
+    .tc-footer-style1 .links-item h6 {
+        text-align: center; /* Centrer les titres sur petits écrans */
     }
 
     .tc-footer-style1 .links-item ul li {
-        margin-bottom: 8px;
+        text-align: center; /* Centrer les éléments des listes sur petits écrans */
     }
 }

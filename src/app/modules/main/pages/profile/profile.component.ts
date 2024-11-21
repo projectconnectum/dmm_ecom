@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { TransactionService } from 'src/app/services/transaction.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ProfileComponent implements OnInit{
 
   wallet:any;
 
-  constructor(private router: Router,private transactionService:TransactionService){}
+  constructor(private router: Router,private transactionService:TransactionService ,private toastService:NgToastService){}
 
   ngOnInit(): void {
 
@@ -135,6 +136,32 @@ export class ProfileComponent implements OnInit{
   payOrder(item: any) {
     console.log(`Paiement en cours pour la commande #${item.id}`);
     // Ajouter ici l'intégration avec l'API de paiement.
+  }
+
+  paid(id:any){
+    this.transactionService.paidOrder(id).subscribe(
+      res=>{
+        console.log(res);
+        this.getOrder();
+        this.toastService.success({
+          detail: "Commande payée",
+          duration: 10000,
+          position: "topRight",
+        });
+      },
+      err=>{
+
+        this.toastService.error({
+          detail: "Solde insufissant",
+          summary:"Recharger votre portefeuille",
+          duration: 10000,
+          position: "topRight",
+        });
+
+        this.showRechargeModal=true;
+
+      }
+    );
   }
 
 

@@ -292,6 +292,23 @@ export class OrderComponent {
       }
     );
   }
+
+
+  //phone number 
+
+  phoneNumber: any = {
+    number: '',
+    country: null,
+  };
+
+  onChange(event: any) {
+    this.phoneNumber = {
+      number: event.number,
+      country: event.country,
+    };
+    console.log('Numéro complet :', event.number);
+    console.log('Pays sélectionné :', event.country);
+  }
   
 
 

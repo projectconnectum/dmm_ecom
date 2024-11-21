@@ -143,3 +143,17 @@
     box-shadow: none; /* Enlever l'effet de focus par défaut */
   }
   
+  /* quantity btn*/
+  .rounded-circle {
+    width: 40px; /* Largeur fixe */
+    height: 40px; /* Hauteur égale à la largeur */
+    border-radius: 50%; /* Rend le bouton parfaitement circulaire */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Supprime les marges internes */
+    line-height: 1; /* Ajuste la hauteur de ligne pour éviter tout débordement */
+  }
+
+
+  

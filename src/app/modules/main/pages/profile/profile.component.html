@@ -15,7 +15,7 @@
                 <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb fw-bold mb-0">
-                          <li class="breadcrumb-item color-999"><a href="/main/home">Home</a></li>
+                          <li class="breadcrumb-item color-999"><a href="/main/home">Accueil</a></li>
                 
                           <li class="breadcrumb-item active color-000" aria-current="page">profile</li>
                         </ol>
@@ -178,13 +178,8 @@
                                               
                                                   <!-- Bouton de paiement -->
                                                   <div class="payment-section text-end mt-3">
-                                                    <button
-                                                      *ngIf="item.status === 'WAITING_FOR_PAYMENT'"
-                                                      class="btn  btn-sm" style="background-color: var(--color-blue1);color:white;"
-                                                      (click)="payOrder(item)"
-                                                    >
-                                                      Payer maintenant
-                                                    </button>
+                                                    <a  *ngIf="item.status === 'WAITING_FOR_PAYMENT'" role="button" (click)="paid(item.id)" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-20 py-3 px-5"> <span> Payer </span> </a>
+                                                    
                                                     <p *ngIf="item.status !== 'WAITING_FOR_PAYMENT'" class="fsz-14 fw-bold text-secondary">
                                                       {{ getPaymentMessage(item.status) }}
                                                     </p>
