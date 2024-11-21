@@ -29,8 +29,17 @@ import { api } from "../env/api.env";
         return this.http.get<any>(api.url+'billings/wallets/mine',{headers:this.header});
       };
 
-      
+      /// creer une commande
 
+      addCmd(data:any):Observable<any>{
+        return this.http.post<any>(api.url+'commands/orders',data,{headers:this.header});
+      };
+
+      getCmd():Observable<any>{
+        return this.http.get<any>(api.url+'commands/orders',{headers:this.header});
+      };
+
+      
       
     
 

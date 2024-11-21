@@ -1,6 +1,8 @@
 import { Component, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { ProductService } from 'src/app/services/product.service';
+import { TransactionService } from 'src/app/services/transaction.service';
 
 @Component({
   selector: 'app-order',
@@ -56,7 +58,9 @@ export class OrderComponent {
     private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private transactionService:TransactionService,
+    private toastService:NgToastService
   ) {}
 
   formatDescription(description: string): string {
@@ -207,6 +211,40 @@ export class OrderComponent {
     } else {
       console.error('La géolocalisation n\'est pas prise en charge par ce navigateur.');
     }
+  }
+
+
+  // create a commade 
+
+  Addcommande(){
+    const data={
+      "order":JSON.stringify(this.product),
+      "delivery_address":this.latitude +"/"+this.longitude,
+    "shop":this.product.shop_reference,
+      "delivery_cost":this.totalPrice+this.delyveryTotalPrice,
+      "delivery_delay":this.selectedDelivery.deliveryTime
+    };
+    this.transactionService.addCmd(data).subscribe(
+      (res)=>{
+         console.log(res);
+         this.toastService.success(
+          {
+              detail:"Commande Ajouté ",
+              duration:10000,
+              position:"topRight"
+          });
+      },
+      (err)=>{
+        console.log(err);
+        this.toastService.error(
+          {
+              detail:"une erreur est survenu ",
+              duration:10000,
+              position:"topRight"
+          });
+      }
+    );
+
   }
 
 

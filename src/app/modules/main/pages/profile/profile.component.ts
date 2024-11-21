@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit{
 
     this.getAllRecharge();
     this.getWallet();
+    this.getOrder();
     
   }
 
@@ -88,6 +89,52 @@ export class ProfileComponent implements OnInit{
       }
     );
  
+  }
+
+  // get orders history
+
+
+  orders:any[]=[];
+  getOrder(){
+    this.transactionService.getCmd().subscribe(
+      res=>{
+        console.log("order",res);
+        this.orders=res.results;
+      },
+      errr=>{
+        console.log(errr);
+      }
+    );
+  }
+
+
+  getStatusText(status: string): string {
+    switch (status) {
+      case 'DELIVERED':
+        return 'Livré';
+      case 'WAITING_FOR_PAYMENT':
+        return 'En attente de paiement';
+      case 'PROCESSING':
+        return 'En cours de traitement';
+      default:
+        return 'Statut inconnu';
+    }
+  }
+  
+  getPaymentMessage(status: string): string {
+    switch (status) {
+      case 'DELIVERED':
+        return 'Commande déjà livrée.';
+      case 'PROCESSING':
+        return 'Commande en cours de traitement.';
+      default:
+        return '';
+    }
+  }
+  
+  payOrder(item: any) {
+    console.log(`Paiement en cours pour la commande #${item.id}`);
+    // Ajouter ici l'intégration avec l'API de paiement.
   }
 
 

@@ -110,152 +110,90 @@
                                     <div class="orders-tab">
                                         <h4 class="fw-bold text-capitalize mb-30"> Orders History </h4>
                                         <div class="orders">
-                                            <div class="order-card">
-                                                <div class="order-head">
+                                            <div class="order-container" *ngFor="let item of orders">
+                                                <div class="order-card">
+                                                  <!-- En-tête de la commande -->
+                                                  <div class="order-head">
                                                     <div class="row align-items-center">
-                                                        <div class="col-lg-6">
-                                                            <p class="my-2"> <span> NUM: </span> <strong> #45512132 </strong> </p>
-                                                            <p class="my-2"> <span> DATE: </span> <span> 3/12/2022 </span> </p>
-                                                        </div>
-                                                        <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
-                                                            <span class="alert alert-success mb-0 py-2" role="alert"> Delivered </span>
-                                                        </div>
+                                                      <div class="col-lg-6">
+                                                        <p class="my-2">
+                                                          <span>NUM: </span>
+                                                          <strong>#{{ item.id }}</strong>
+                                                        </p>
+                                                        <p class="my-2">
+                                                          <span>DATE: </span>
+                                                          <span>{{ item.created | date: 'short' }}</span>
+                                                        </p>
+                                                      </div>
+                                                      <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
+                                                        <span
+                                                          class="alert mb-0 py-2"
+                                                          [ngClass]="{
+                                                            'alert-success': item.status === 'DELIVERED',
+                                                            'alert-warning': item.status === 'WAITING_FOR_PAYMENT',
+                                                            'alert-info': item.status === 'PROCESSING'
+                                                          }"
+                                                          role="alert"
+                                                        >
+                                                          {{ getStatusText(item.status) }}
+                                                        </span>
+                                                      </div>
                                                     </div>
-                                                </div>
-                                                <div class="products">
+                                                  </div>
+                                              
+                                                  <!-- Détails du produit -->
+                                                  <div class="product-card">
                                                     <div class="row gx-3">
-                                                        <div class="col-lg-6">
-                                                            <div class="product-card">
-                                                                <div class="top-inf">
-                                                                    <small class="fsz-10 py-1 px-2 radius-2 bg-222 text-white text-uppercase"> new </small>
-                                                                    
-                                                                </div>
-                                                                <a href="#0" class="img">
-                                                                    <img src="assets/inner_page/img/products/prod27.png" alt="" class="img-contain main-image">
-                                                                </a>
-                                                                <div class="info">
-                                                                    <h6> <a href="#" class="prod-title fsz-14 fw-bold mt-2 hover-green2"> aPod Pro Tablet 2023  LTE + Wifi, GPS Cellular 12.9 Inch, 512GB </a> </h6>
-                                                                    <div class="price mt-15">
-                                                                        <h5 class="fsz-18 fw-600"> $979.00 </h5>
-                                                                    </div>
-                                                                    
-                                                                    <div class="meta">
-                                                                        <a href="#" class="meta-item color-222"> $2.98 Shipping <span class="bg bg-222"></span> </a>
-                                                                    </div>
-                                                                    <p class="fsz-12 mt-2"> <i class="fas fa-check-circle color-green2 me-1"></i> In stock </p>
-                                                                </div>
+                                                      <div class="col-12">
+                                                        <div class="product">
+                                                          <a href="#0" class="img">
+                                                            <img
+                                                              [src]="item.order.products[0].medias[0]?.file"
+                                                              alt="{{ item.order.products[0].name }}"
+                                                              class="img-contain main-image"
+                                                            />
+                                                          </a>
+                                                          <div class="info">
+                                                            <h6>
+                                                              <a href="#" class="prod-title fsz-14 fw-bold mt-2 hover-green2">
+                                                                {{ item.order.products[0].name }}
+                                                              </a>
+                                                            </h6>
+                                                            <div class="price mt-15">
+                                                              <h5 class="fsz-18 fw-600">
+                                                                Prix : {{ item.order.products[0].selling_price | number }} FCFA
+                                                              </h5>
+                                                              <h6 class="fsz-16 fw-500 text-secondary">
+                                                                Frais de livraison : {{ item.order.delivery_cost | number }} FCFA
+                                                              </h6>
                                                             </div>
+                                                            <p class="fsz-12 mt-2">
+                                                              <i class="fas fa-check-circle color-green2 me-1"></i> In stock
+                                                            </p>
+                                                          </div>
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="product-card">
-                                                                <div class="top-inf">
-                                                                    <small class="fsz-10 py-1 px-2 radius-2 bg-222 text-white text-uppercase"> new </small>
-                                                                    
-                                                                </div>
-                                                                <a href="#0" class="img">
-                                                                    <img src="assets/inner_page/img/products/prod65.png" alt="" class="img-contain main-image">
-                                                                </a>
-                                                                <div class="info">
-                                                                    <div class="rating">
-                                                                        <div class="stars">
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star color-999"></i>
-                                                                        </div>
-                                                                        <span class="num"> (5) </span>
-                                                                    </div>
-                                                                    <h6> <a href="#" class="prod-title fsz-14 fw-bold mt-2 hover-green2"> Samsung Galaxy X6 Ultra LTE 4G/128 Gb, Black  Smartphone  </a> </h6>
-                                                                    <div class="price mt-15">
-                                                                        <h5 class="fsz-18 fw-600"> $659.00 </h5>
-                                                                    </div>
-                                                                    
-                                                                    <div class="meta">
-                                                                        <a href="#" class="meta-item color-green2"> free shipping <span class="bg bg-green2"></span> </a>
-                                                                        <a href="#" class="meta-item color-red1"> free gift <span class="bg bg-red1"></span> </a>
-                                                                    </div>
-                                                                    <p class="fsz-12 mt-2"> <i class="fas fa-check-circle color-green2 me-1"></i> In stock </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                      </div>
                                                     </div>
+                                                  </div>
+                                              
+                                                  <!-- Bouton de paiement -->
+                                                  <div class="payment-section text-end mt-3">
+                                                    <button
+                                                      *ngIf="item.status === 'WAITING_FOR_PAYMENT'"
+                                                      class="btn  btn-sm" style="background-color: var(--color-blue1);color:white;"
+                                                      (click)="payOrder(item)"
+                                                    >
+                                                      Payer maintenant
+                                                    </button>
+                                                    <p *ngIf="item.status !== 'WAITING_FOR_PAYMENT'" class="fsz-14 fw-bold text-secondary">
+                                                      {{ getPaymentMessage(item.status) }}
+                                                    </p>
+                                                  </div>
                                                 </div>
-                                            </div>
-                                            <div class="order-card">
-                                                <div class="order-head">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-6">
-                                                            <p class="my-2"> <span> NUM: </span> <strong> #45512132 </strong> </p>
-                                                            <p class="my-2"> <span> DATE: </span> <span> 3/12/2022 </span> </p>
-                                                        </div>
-                                                        <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
-                                                            <span class="alert alert-danger mb-0 py-2" role="alert"> Rejected </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="products">
-                                                    <div class="row gx-3">
-                                                        <div class="col-lg-6">
-                                                            <div class="product-card">
-                                                                <div class="top-inf">
-                                                                    <div class="dis-card">
-                                                                        <small class="fsz-10 d-block text-uppercase"> save </small>
-                                                                        <h6 class="fsz-14"> $199.00 </h6>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                                <a href="#0" class="img">
-                                                                    <img src="assets/inner_page/img/products/prod26.png" alt="" class="img-contain main-image">
-                                                                </a>
-                                                                <div class="info">
-                                                                    <div class="rating">
-                                                                        <div class="stars">
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star"></i>
-                                                                            <i class="la la-star"></i>
-                                                                        </div>
-                                                                        <span class="num"> (152) </span>
-                                                                    </div>
-                                                                    <h6> <a href="#" class="prod-title fsz-14 fw-bold mt-2 hover-green2"> SROK Smart Phone 128GB, Oled Retina </a> </h6>
-                                                                    <div class="price mt-15">
-                                                                        <h5 class="fsz-18 color-red1 fw-600"> $579.00 </h5>
-                                                                    </div>
-                                                                    
-                                                                    <div class="meta">
-                                                                        <a href="#" class="meta-item color-green2"> free shipping <span class="bg bg-green2"></span> </a>
-                                                                    </div>
-                                                                    <p class="fsz-12 mt-2"> <i class="fas fa-check-circle color-green2 me-1"></i> In stock </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="product-card">
-                                                                <div class="top-inf">
-                                                                    <small class="fsz-10 py-1 px-2 radius-2 bg-222 text-white text-uppercase"> new </small>
-                                                                    
-                                                                </div>
-                                                                <a href="#0" class="img">
-                                                                    <img src="assets/inner_page/img/products/prod27.png" alt="" class="img-contain main-image">
-                                                                </a>
-                                                                <div class="info">
-                                                                    <h6> <a href="#" class="prod-title fsz-14 fw-bold mt-2 hover-green2"> aPod Pro Tablet 2023  LTE + Wifi, GPS Cellular 12.9 Inch, 512GB </a> </h6>
-                                                                    <div class="price mt-15">
-                                                                        <h5 class="fsz-18 fw-600"> $979.00 </h5>
-                                                                    </div>
-                                                                    
-                                                                    <div class="meta">
-                                                                        <a href="#" class="meta-item color-222"> $2.98 Shipping <span class="bg bg-222"></span> </a>
-                                                                    </div>
-                                                                    <p class="fsz-12 mt-2"> <i class="fas fa-check-circle color-green2 me-1"></i> In stock </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                              </div>
+                                              
+
+                                          
                                         </div>
                                     </div>
                                 </div>

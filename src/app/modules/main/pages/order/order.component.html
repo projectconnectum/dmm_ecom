@@ -126,7 +126,7 @@
                                     </label>
                                   </div>
                                   
-                                  <a [href]="'/main/order?id=' + product.id + '&shop_ref=' + product.shop_reference" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-30 w-100 py-3"> <span> Commander </span> </a>
+                                  <a role="button" (click)="Addcommande()" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-30 w-100 py-3"> <span> Commander </span> </a>
                                 </div>
                               </div>
                           </div>
@@ -167,7 +167,7 @@
     <div class="mb-4">
       <h2 class="text-dark fs-6">Sélectionnez un pays</h2>
 
-      <select class="form-select" [(ngModel)]="selectedCountry">
+      <select class="form-select" [(ngModel)]="selectedCountry" (change)="onCountryChange()">
         <option *ngFor="let country of shopInfo.deliveryInfo" [value]="country.id">{{ country.name }}</option>
       </select>
     </div>
