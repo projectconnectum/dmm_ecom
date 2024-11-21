@@ -216,36 +216,83 @@ export class OrderComponent {
 
   // create a commade 
 
-  Addcommande(){
-    const data={
-      "order":JSON.stringify(this.product),
-      "delivery_address":this.latitude +"/"+this.longitude,
-    "shop":this.product.shop_reference,
-      "delivery_cost":this.totalPrice+this.delyveryTotalPrice,
-      "delivery_delay":this.selectedDelivery.deliveryTime
+  Addcommande() {
+    // Validation des données avant l'envoi
+    if (!this.product) {
+      this.toastService.error({
+        detail: "Produit manquant",
+        duration: 10000,
+        position: "topRight",
+      });
+      return;
+    }
+  
+    if (!this.latitude || !this.longitude) {
+      this.toastService.error({
+        detail: "Adresse de livraison invalide",
+        duration: 10000,
+        position: "topRight",
+      });
+      return;
+    }
+  
+    if (!this.product.shop_reference) {
+      this.toastService.error({
+        detail: "Référence de la boutique introuvable",
+        duration: 10000,
+        position: "topRight",
+      });
+      return;
+    }
+  
+    if (!this.totalPrice || !this.delyveryTotalPrice) {
+      this.toastService.error({
+        detail: "Mode de livraison non sélectionné",
+        duration: 10000,
+        position: "topRight",
+      });
+      return;
+    }
+  
+    if (!this.selectedDelivery || !this.selectedDelivery.deliveryTime) {
+      this.toastService.error({
+        detail: "Mode de livraison non sélectionné",
+        duration: 10000,
+        position: "topRight",
+      });
+      return;
+    }
+  
+    // Données valides, construction du payload
+    const data = {
+      order: JSON.stringify(this.product),
+      delivery_address: this.latitude + "/" + this.longitude,
+      shop: this.product.shop_reference,
+      delivery_cost: this.totalPrice + this.delyveryTotalPrice,
+      delivery_delay: this.selectedDelivery.deliveryTime,
     };
+  
+    // Envoi de la commande
     this.transactionService.addCmd(data).subscribe(
-      (res)=>{
-         console.log(res);
-         this.toastService.success(
-          {
-              detail:"Commande Ajouté ",
-              duration:10000,
-              position:"topRight"
-          });
+      (res) => {
+        console.log(res);
+        this.toastService.success({
+          detail: "Commande ajoutée avec succès",
+          duration: 10000,
+          position: "topRight",
+        });
       },
-      (err)=>{
+      (err) => {
         console.log(err);
-        this.toastService.error(
-          {
-              detail:"une erreur est survenu ",
-              duration:10000,
-              position:"topRight"
-          });
+        this.toastService.error({
+          detail: "Une erreur est survenue lors de l'ajout de la commande",
+          duration: 10000,
+          position: "topRight",
+        });
       }
     );
-
   }
+  
 
 
 }
