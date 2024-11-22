@@ -1,6 +1,7 @@
 import { Component, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { GlobaleService } from 'src/app/services/globale.service';
 import { ProductService } from 'src/app/services/product.service';
 import { TransactionService } from 'src/app/services/transaction.service';
 
@@ -26,6 +27,32 @@ export class OrderComponent {
   isAuth:any="true";
 
 
+  // phone input 
+
+
+
+
+
+
+// get world country 
+
+world_country:any[]=[];
+inputSelectedCountry:any ;
+
+  getWorldCountry(){
+    this.globaleService.getWorldountry().subscribe(
+      (res)=>{
+        this.world_country=res.data;
+        console.log(res);
+        this.inputSelectedCountry=this.world_country[0];
+      },
+      (err)=>{
+        console.log(err);
+        this.toastService.error({detail: 'Une erreur est survenue',duration:3000});
+      }
+    )
+  }
+
 
 
   ngOnInit(): void {
@@ -48,6 +75,8 @@ export class OrderComponent {
       }
     
       this.getShopInfo(this.shopRef);
+
+      this.getWorldCountry();
     
 
     }
@@ -60,7 +89,8 @@ export class OrderComponent {
     private route: ActivatedRoute,
     private renderer: Renderer2,
     private transactionService:TransactionService,
-    private toastService:NgToastService
+    private toastService:NgToastService,
+    private globaleService:GlobaleService,
   ) {}
 
   formatDescription(description: string): string {
@@ -132,6 +162,18 @@ export class OrderComponent {
     }
    
   }
+
+// adresse de livraison 
+
+adresse:any={
+  pays:"",
+  ville:"",
+  quartier:"",
+  bp:"",
+
+}
+
+
 
 
   // deault delivery info 
@@ -227,9 +269,9 @@ export class OrderComponent {
       return;
     }
   
-    if (!this.latitude || !this.longitude) {
+    if (this.adresse.ville=="" ||this.adresse.quartier=="" ||this.adresse.bp=="" ||this.adresse.pays=="") {
       this.toastService.error({
-        detail: "Adresse de livraison invalide",
+        detail: "Adresse de livraison incomplete",
         duration: 10000,
         position: "topRight",
       });
@@ -266,11 +308,15 @@ export class OrderComponent {
     // Données valides, construction du payload
     const data = {
       order: JSON.stringify(this.product),
-      delivery_address: this.latitude + "/" + this.longitude,
+      delivery_address: JSON.stringify(this.adresse),
       shop: this.product.shop_reference,
-      delivery_cost: this.totalPrice + this.delyveryTotalPrice,
+      delivery_cost: this.delyveryTotalPrice,
+      total:this.totalPrice + this.delyveryTotalPrice,
+      quantity:this.quantity,
       delivery_delay: this.selectedDelivery.deliveryTime,
     };
+
+    console.log(data);
   
     // Envoi de la commande
     this.transactionService.addCmd(data).subscribe(

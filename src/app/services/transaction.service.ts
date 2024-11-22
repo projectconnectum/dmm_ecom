@@ -41,7 +41,7 @@ import { api } from "../env/api.env";
 
 
       paidOrder(id:any):Observable<any>{
-        return this.http.put<any>(api.url+'commands/orders/markaspaid/'+id,{headers:this.header});
+        return this.http.post<any>(api.url+'commands/orders/markaspaid/'+id,{headers:this.header});
       };
 
 

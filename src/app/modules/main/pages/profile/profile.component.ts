@@ -151,6 +151,8 @@ export class ProfileComponent implements OnInit{
       },
       err=>{
 
+        console.log(err);
+
         this.toastService.error({
           detail: "Solde insufissant",
           summary:"Recharger votre portefeuille",

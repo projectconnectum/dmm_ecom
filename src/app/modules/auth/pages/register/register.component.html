@@ -1,7 +1,4 @@
 <main>
-    <div class="logo-container">
-        <img src="assets/home1/img/logo.png" style="width:20%; height:10%;" alt="App Logo" class="app-logo">
-    </div>
             
     <!--  Start Register  -->
     <section class="tc-login p-5 radius-4 bg-white mt-3 mb-3">
@@ -38,24 +35,18 @@
                         </div>
 
                         <!-- Mot de passe -->
-                        <div class="form-group show_hide_password mb-4">
+                        <div class="form-group show_hide_password ">
                             <label for="">Mot de passe *</label>
                             <input [(ngModel)]="user.password" name="password" type="password" class="form-control" placeholder="....">
                             <i class="show_pass fal fa-eye-slash"></i>
                         </div>
 
-                        <!-- Checkbox et bouton d'inscription -->
-                        <div class="form-group">
-                            <label>
-                                <input class="checkagree" type="checkbox"> En cliquant sur le bouton S'inscrire, vous acceptez nos termes et conditions.
-                            </label>
-                        </div>
                         <div class="btns">
                             <a role="button" (click)="register()" class="btn btn-bloc butn bg-green2 text-white radius-4 fw-500 fsz-14 text-uppercase text-center mt-40 px-5"> <span> S'inscrire </span> </a>
                         </div>
 
                         <!-- Lien de connexion -->
-                        <div class="mt-10">
+                        <div class="mt-0">
                             <a role="button" routerLink="/auth/login/" class="text-uppercase color-999 fsz-13 mt-3"> Déjà inscrit ? <span class="color-green2">  Connectez-vous </span> </a>
                             
                         </div>
@@ -64,7 +55,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="img">
-                    <img src="assets/inner_page/img/login.svg" alt="">
+                    <img src="assets/common/assets/imgs/illustration.png" alt="">
                 </div>
             </div>
         </div>

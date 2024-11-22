@@ -65,13 +65,74 @@
                                   </div>
                   
                                   <h5 class="card-title mb-3">Adresse de livraison</h5>
-                                  <div class="mb-3 delivery-map-container" role="button" (click)="getLocation()" style="height: 150px;">
+
+                                  <div class="container mt-4">
+                                 
+                                      <div class="row mb-3">
+                                        <!-- Pays -->
+                                        <div class="col-md-6">
+                                          <label for="pays" class="form-label">Pays</label>
+                                          <select class="form-select" [(ngModel)]="adresse.pays" >
+                                            <option *ngFor="let country of shopInfo.deliveryInfo" [value]="country.name">{{ country.name }}</option>
+                                          </select>
+                                        </div>
+                                        <!-- Ville -->
+                                        <div class="col-md-6">
+                                          <label for="ville" class="form-label">Ville</label>
+                                          <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="ville" 
+                                            [(ngModel)]="adresse.ville" 
+                                            name="ville" 
+                                            placeholder="Entrez la ville">
+                                        </div>
+                                      </div>
+                                  
+                                      <div class="row mb-3">
+                                        <!-- Quartier -->
+                                        <div class="col-md-6">
+                                          <label for="quartier" class="form-label">Quartier</label>
+                                          <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="quartier" 
+                                            [(ngModel)]="adresse.quartier" 
+                                            name="quartier" 
+                                            placeholder="Entrez le quartier">
+                                        </div>
+                                        <!-- BP -->
+                                        <div class="col-md-6">
+                                          <label for="bp" class="form-label">Boîte postale (BP)</label>
+                                          <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="bp" 
+                                            [(ngModel)]="adresse.bp" 
+                                            name="bp" 
+                                            placeholder="Entrez votre boîte postale">
+                                        </div>
+                                      </div>
+                                  
+                            
+                                   
+                                  </div>
+                                  
+
+                                  <!--localization-->
+
+                                <!--
+                                   <div class="mb-3 delivery-map-container" role="button" (click)="getLocation()" style="height: 150px;">
                                     <div class="delivery-map-overlay d-flex align-items-center justify-content-center">
                                       <span [ngClass]="{ 'text-overlay-selected': locationSelected, 'text-overlay': !locationSelected }">
                                         {{ locationSelected ? 'Localisation sélectionnée' : 'Sélectionnez votre localisation' }}
                                       </span>
                                     </div>
                                   </div>
+                                
+                                -->
+
+                                 
                   
                   
                                   <div class="mb-3 delivery-button" role="button" (click)="mode_modal=true">
@@ -87,12 +148,32 @@
                                     </div>
                                   </div>
                   
-                                  <div class="input-group phone-input">
-                                    <span class="input-group-text">
-                                      TEL :
-                                    </span>
-                                    <input type="tel" class="form-control phone-input-field" placeholder=" (E.X)+228 90000000">
+                                  <div class="ms-0 input-group phone-input">
+                                    <!-- Sélection des pays avec drapeaux -->
+                                    <select 
+                                      class="form-select" 
+                                      [(ngModel)]="inputSelectedCountry" 
+                                      >
+                                      <option *ngFor="let country of world_country" [ngValue]="country">
+
+                                      
+                                       <span>
+                                        {{ country.iso2 }}
+                                       </span>
+                                      
+                                         
+                                      </option>
+                                    </select>
+                                  
+                                    <!-- Champ de saisie téléphonique -->
+                                    <input 
+                                      type="tel" 
+                                      class="form-control phone-input-field" 
+                                      placeholder="Entrez votre numéro" 
+                                      value="">
                                   </div>
+                                  
+                                  
                                   
                                 </div>
                               </div>

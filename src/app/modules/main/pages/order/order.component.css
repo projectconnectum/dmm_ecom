@@ -103,46 +103,7 @@
     font-weight: bold;
   }
 
-  /*phone input*/
-
-  .phone-input {
-    border-radius: 30px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 300px; /* Ajustez la largeur si nécessaire */
-  }
-  
-  .flag-container {
-    padding: 0;
-    background-color: #f1f1f1; /* Couleur d'arrière-plan pour le drapeau */
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-  }
-  
-  .flag-container img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-  }
-  
-  .phone-input-field {
-    border: none;
-    height: 40px;
-    padding-left: 10px; /* Espace entre le drapeau et le texte */
-    font-size: 1rem;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-  }
-  
-  .phone-input-field:focus {
-    outline: none;
-    box-shadow: none; /* Enlever l'effet de focus par défaut */
-  }
-  
+ 
   /* quantity btn*/
   .rounded-circle {
     width: 40px; /* Largeur fixe */
@@ -156,4 +117,25 @@
   }
 
 
+  /*phone input */
+  .phone-input {
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .phone-input select {
+ 
+    max-width: 90px;
+    border:black 2px solid;
+    border-radius: 10;
+  }
+  
+  .phone-input-field {
+    margin-left: 10px;
+  }
+  
+  .phone-input input{
+    border:black 2px solid;
+    border-radius: 10;
+  }
   

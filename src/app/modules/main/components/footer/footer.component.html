@@ -1,5 +1,4 @@
-
-<!--  Start footer  -->
+<!-- Début du pied de page -->
 <footer class="tc-footer-style1">
 
     <div class="container">
@@ -9,80 +8,94 @@
                 <div class="col-lg-4">
                     <div class="foot-info text-white ms-10">
 
-                        <img src="assets/favicon/android-chrome-512x512.png" style="width:20%; height:10%;" alt="App Logo" class="app-logo">
-
-                        
-                        <h5 class="fw-bold color-blue1 mb-20"> (025) 3686 25 16 </h5>
+                        <a class="fw-bold color-blue1 mb-20"> (025) 3686 25 16 </a>
                         <a href="#"> 257 Thatcher Road St, Brooklyn, Manhattan, <br> NY 10092 </a>
-                        <a href="#"> contact@swateletro.com </a>
-                        <div class="foot-social mt-40">
-                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                            <a href="#"> <i class="fab fa-facebook-f"></i> </a>
-                            <a href="#"> <i class="fab fa-instagram"></i> </a>
-                            <a href="#"> <i class="fab fa-youtube"></i> </a>
-                            <a href="#"> <i class="fab fa-behance"></i> </a>
+                        <a href="#"> contact@dreammore.co </a>
+                        <div class="foot-social mt-10">
+                            
+                            <a href="https://www.facebook.com/Dreammoreapp" target="_blank"> <i class="fab fa-facebook-f"></i> </a>
+                            <a href="https://www.instagram.com/dreammore_bientot/" target="_blank"> <i class="fab fa-instagram"></i> </a>
+                            <a href="https://www.tiktok.com/@dreammore_?lang=en" target="_blank"> <i class="pi pi-tiktok"></i> </a>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7264725541084151808" target="_blank"> <i class="pi pi-linkedin"></i> </a>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="links-item mt-5 mt-lg-0">
+                        <p class="fsz-16 mb-30"> Catégories principales </p>
+                        <ul class="links">
+                            <li  *ngFor="let item of categories|slice:0:6"> <a role="button" [href]="'/main/product/cat?id=' + item.id"> {{item.name}} </a> </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="links-item mt-5 mt-lg-0">
+                        <p class="fsz-18 mb-30"> Entreprise </p>
+                        <ul class="links">
+                            <li> <a href="#"> À propos de dreammore </a> </li>
+                            <li> <a href="#"> Contact </a> </li>
+                            <li> <a href="#"> Carrière </a> </li>
+                            <li> <a href="#"> Blog </a> </li>
+                            <li> <a href="#"> Plan du site </a> </li>
+                            <li> <a href="#"> Localisation des magasins </a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="links-item mt-5 mt-lg-0">
+                        <p class="fsz-18 mb-30"> Centre d'aide </p>
+                        <ul class="links">
+                            <li> <a href="#"> Service client </a> </li>
+                            <li> <a href="#"> Politique </a> </li>
+                            <li> <a href="#"> Termes & Conditions </a> </li>
+                            <li> <a href="#"> Suivi de commande </a> </li>
+                            <li> <a href="#"> FAQs </a> </li>
+                            <li> <a href="#"> Mon compte </a> </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="links-item mt-5 mt-lg-0">
+                        <p class="fsz-18 mb-30"> Partenaire </p>
+                        <ul class="links">
+                            <li> <a href="#"> Devenir vendeur </a> </li>
+                            <li> <a href="#"> Affiliation </a> </li>
+                            <li> <a href="#"> Publicité </a> </li>
+                            <li> <a href="#"> Partenariat </a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="app-download mt-5 mt-lg-0">
+                        <p class="fsz-18 mb-30">Téléchargez l'app</p>
+                        
+                        <div class="download-buttons mt-2 ms-0">
+                            <a href="#" class="btn-app ">
+                                <img src="assets/common/assets/imgs/appstore.png" alt="App Store" style="width: 100%;">
+                            </a>
+                            <a href="#" class="btn-app mt-2">
+                                <img src="assets/common/assets/imgs/playstore.png" alt="Google Play" style="width: 100%;">
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <h6 class="fsz-18 mb-30"> Top Categories </h6>
-                        <ul class="links">
-                            <li> <a href="#"> TV/Televisions </a> </li>
-                            <li> <a href="#"> Computers </a> </li>
-                            <li> <a href="#"> Laptops </a> </li>
-                            <li> <a href="#"> Mobiles & Tablets </a> </li>
-                            <li> <a href="#"> Audios </a> </li>
-                            <li> <a href="#"> Cameras </a> </li>
-                            <li> <a href="#"> Gadget </a> </li>
-                            <li> <a href="#"> Sport Equipments </a> </li>
-                            <li> <a href="#"> Office </a> </li>
-                            <li> <a href="#"> Smart Home </a> </li>
-                        </ul>
-                    </div>
+               
+            </div>
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <p class="fsz-18 mb-10"> Nous acceptons </p>
+                    <img src="assets/common/assets/imgs/payement.png" style="width: 30%;height:50%;" alt="">
+
                 </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <h6 class="fsz-18 mb-30"> Company </h6>
-                        <ul class="links">
-                            <li> <a href="#"> About Swoo </a> </li>
-                            <li> <a href="#"> Contact </a> </li>
-                            <li> <a href="#"> Career </a> </li>
-                            <li> <a href="#"> Blog </a> </li>
-                            <li> <a href="#"> Sitemap </a> </li>
-                            <li> <a href="#"> Store Locations </a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <h6 class="fsz-18 mb-30"> Help Center </h6>
-                        <ul class="links">
-                            <li> <a href="#"> Customer Service </a> </li>
-                            <li> <a href="#"> Policy </a> </li>
-                            <li> <a href="#"> Terms & Conditions </a> </li>
-                            <li> <a href="#"> Trach Order </a> </li>
-                            <li> <a href="#"> FAQs </a> </li>
-                            <li> <a href="#"> My Account </a> </li>
-                            <li> <a href="#"> Product Support </a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <h6 class="fsz-18 mb-30"> Partner </h6>
-                        <ul class="links">
-                            <li> <a href="#"> Become Seller </a> </li>
-                            <li> <a href="#"> Affiliate </a> </li>
-                            <li> <a href="#"> Advertise </a> </li>
-                            <li> <a href="#"> Partnership </a> </li>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
             <div class="row text-white">
                 <div class="col-lg-4 text-center ms-10 text-white text-lg-start">
-                    <p class=""> © 2023 <a href="#" class="fw-bold color-000"> SWOO </a>. All Rights Reserved </p>
+                    <p class=""> © 2023 <a href="#" class="fw-bold color-blue1"> Dreammore </a>. Tous droits réservés </p>
                 </div>
             </div>
         </div>
@@ -94,7 +107,7 @@
             <li class="list">
                 <a href="#0">
                     <span class="icon"> <i class="las la-sync-alt"></i> </span>
-                    <span class="text">Compare</span>
+                    <span class="text">Comparer</span>
                 </a>
             </li>
             <li class="list">
@@ -106,7 +119,7 @@
             <li class="list active">
                 <a href="/main/home/">
                     <span class="icon"> <i class="las la-home"></i> </span>
-                    <span class="text">Home</span>
+                    <span class="text">Accueil</span>
                 </a>
             </li>
             <li class="list">
@@ -118,7 +131,7 @@
             <li class="list">
                 <a href="/main/profile/">
                     <span class="icon"> <i class="las la-user"></i> </span>
-                    <span class="text">Profile</span>
+                    <span class="text">Profil</span>
                 </a>
             </li>
             <li class="indicator"></li>
@@ -126,10 +139,10 @@
     </div>
 
 </footer>
-<!--  End footer  -->
+<!-- Fin du pied de page -->
 
-<!--  Start to top button  -->
+<!-- Bouton retour en haut -->
 <a href="#" class="to_top">
     <i class="la la-angle-up"></i>
 </a>
-<!--  End to top button  -->
+<!-- Fin du bouton retour en haut -->
