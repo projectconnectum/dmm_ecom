@@ -41,36 +41,72 @@
                                 </div>
                                 <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                      <button class="nav-link active" id="pills-prof1-tab" data-bs-toggle="pill" data-bs-target="#pills-prof1">
-                                            <span> Compte </span> <i class="fal fa-arrow-right"></i>
-                                      </button>
+                                      <button 
+                                      class="nav-link" 
+                                      [class.active]="activeTab === 'pills-prof1'" 
+                                      (click)="setActiveTab('pills-prof1')" 
+                                      id="pills-prof1-tab" 
+                                      data-bs-toggle="pill" 
+                                      data-bs-target="#pills-prof1">
+                                      <span>Compte</span> <i class="fal fa-arrow-right"></i>
+                                    </button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                      <button class="nav-link" id="pills-prof2-tab" data-bs-toggle="pill" data-bs-target="#pills-prof2">
-                                            <span> My order </span> <i class="fal fa-arrow-right"></i>
-                                      </button>
+                                        <button 
+                                            class="nav-link" 
+                                            [class.active]="activeTab === 'pills-prof2'" 
+                                            (click)="setActiveTab('pills-prof2')" 
+                                            id="pills-prof2-tab" 
+                                            data-bs-toggle="pill" 
+                                            data-bs-target="#pills-prof2">
+                                            <span> Mes commandes </span> <i class="fal fa-arrow-right"></i>
+                                          </button>
+                                      
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                      <button class="nav-link" id="pills-prof3-tab" data-bs-toggle="pill" data-bs-target="#pills-prof3">
-                                            <span> My address </span> <i class="fal fa-arrow-right"></i>
+                                        <button 
+                                        class="nav-link" 
+                                        [class.active]="activeTab === 'pills-prof3'" 
+                                        (click)="setActiveTab('pills-prof3')" 
+                                        id="pills-prof3-tab" 
+                                        data-bs-toggle="pill" 
+                                        data-bs-target="#pills-prof3">
+                                        <span> Mon adresse </span> <i class="fal fa-arrow-right"></i>
                                       </button>
+                                     
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="pills-prof4-tab" data-bs-toggle="pill" data-bs-target="#pills-prof4">
-                                              <span> Change password </span> <i class="fal fa-arrow-right"></i>
-                                        </button>
+                                      <button 
+                                      class="nav-link" 
+                                      [class.active]="activeTab === 'pills-prof4'" 
+                                      (click)="setActiveTab('pills-prof4')" 
+                                      id="pills-prof4-tab" 
+                                      data-bs-toggle="pill" 
+                                      data-bs-target="#pills-prof4">
+                                      <span> Changer le mdp </span> <i class="fal fa-arrow-right"></i>
+                                    </button>
+                                        
                                       </li>
                                       <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="pills-prof4-tab" data-bs-toggle="pill" data-bs-target="#pills-prof5">
-                                              <span> portefeuille </span> <i class="fal fa-arrow-right"></i>
-                                        </button>
+                                        <button 
+                                        class="nav-link" 
+                                        [class.active]="activeTab === 'pills-prof5'" 
+                                        (click)="setActiveTab('pills-prof5')" 
+                                        id="pills-prof4-tab" 
+                                        data-bs-toggle="pill" 
+                                        data-bs-target="#pills-prof5">
+                                        <span> portefeuille </span> <i class="fal fa-arrow-right"></i>
+                                      </button>
+                                       
                                       </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-9">
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-prof1">
+                                <div class="tab-pane fade" 
+                                [class.show]="activeTab === 'pills-prof1'" 
+                                [class.active]="activeTab === 'pills-prof1'" id="pills-prof1">
                                     <div class="acount-tab">
                                         <h4 class="fw-bold text-capitalize mb-30">Information du compte  </h4>
                                         <div class="content">
@@ -100,15 +136,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <a href="#" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-20 py-3 px-5"> <span> save </span> </a>
+                                                    <a href="#" class="butn bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-20 py-3 px-5"> <span> Modifier </span> </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-prof2">
+                                <div class="tab-pane fade" 
+                                [class.show]="activeTab === 'pills-prof2'" 
+                                [class.active]="activeTab === 'pills-prof2'"  id="pills-prof2">
                                     <div class="orders-tab">
-                                        <h4 class="fw-bold text-capitalize mb-30"> Orders History </h4>
+                                        <h4 class="fw-bold text-capitalize mb-30"> Historique des commandes </h4>
                                         <div class="orders">
                                             <div class="order-container" *ngFor="let item of orders">
                                                 <div class="order-card">
@@ -192,9 +230,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-prof3">
+                                <div class="tab-pane fade" class="tab-pane fade" 
+                                [class.show]="activeTab === 'pills-prof3'" 
+                                [class.active]="activeTab === 'pills-prof3'"  id="pills-prof3">
                                     <div class="acount-tab">
-                                        <h4 class="fw-bold text-capitalize mb-30"> My Address </h4>
+                                        <h4 class="fw-bold text-capitalize mb-30"> Mon adresse </h4>
                                         <div class="content">
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -240,9 +280,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-prof4">
+                                <div class="tab-pane fade" class="tab-pane fade" 
+                                [class.show]="activeTab === 'pills-prof4'" 
+                                [class.active]="activeTab === 'pills-prof4'"  id="pills-prof4">
                                     <div class="acount-tab">
-                                        <h4 class="fw-bold text-capitalize mb-30"> Change Password </h4>
+                                        <h4 class="fw-bold text-capitalize mb-30"> Changer le password </h4>
                                         <div class="content">
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -270,7 +312,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-prof5">
+                                <div class="tab-pane fade" class="tab-pane fade" 
+                                [class.show]="activeTab === 'pills-prof5'" 
+                                [class.active]="activeTab === 'pills-prof5'"  id="pills-prof5">
                                     <div class="acount-tab">
                                         <h4 class="fw-bold text-capitalize mb-30">Portefeuille</h4>
                                         <div class="content">
@@ -329,6 +373,7 @@
             <!--End-Contents-->
 
         </div>
+        <app-footer></app-footer>
 
     </div>
 

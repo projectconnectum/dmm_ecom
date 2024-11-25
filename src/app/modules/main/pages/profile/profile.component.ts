@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { TransactionService } from 'src/app/services/transaction.service';
 
@@ -14,9 +14,11 @@ export class ProfileComponent implements OnInit{
 
   recharges:any[]=[];
 
+  activeTab: string = 'pills-prof1';
+
   wallet:any;
 
-  constructor(private router: Router,private transactionService:TransactionService ,private toastService:NgToastService){}
+  constructor(private route: ActivatedRoute,private router: Router,private transactionService:TransactionService ,private toastService:NgToastService){}
 
   ngOnInit(): void {
 
@@ -24,11 +26,26 @@ export class ProfileComponent implements OnInit{
       this.router.navigate(['/auth/login']);
     }
 
+    this.route.queryParams.subscribe(params => {
+      if (params['tab_id']) {
+        this.setActiveTab(params['tab_id']);
+      }
+    });
+
     this.getAllRecharge();
     this.getWallet();
     this.getOrder();
     
   }
+
+  // setActiveTab
+
+  setActiveTab(tabId: string): void {
+    this.activeTab = tabId;
+  }
+
+
+
 
   getAllRecharge(){
    this.transactionService.getAllRecharges().subscribe(

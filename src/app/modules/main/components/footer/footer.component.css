@@ -127,3 +127,10 @@
     max-width: 100%;
     height: auto;
 }
+
+.img-rounded-bordered {
+    border: 2px solid white; /* Bordure blanche */
+    border-radius: 15px;     /* Bords arrondis */
+    padding: 2px;            /* Espacement pour mieux afficher la bordure */
+    display: block;          /* Assure un bon rendu dans les conteneurs */
+  }

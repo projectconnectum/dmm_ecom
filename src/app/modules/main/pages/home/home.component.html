@@ -31,9 +31,41 @@
 
     <header>
 
+        <!--PUB-->
+
+         <!--  Start header  -->
+         <section class="tc-header-style1">
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-12 mt-10">
+                            <div class="main-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" *ngFor="let item of products | slice:0:2">
+                                        <div class="slide-card">
+                                            <div class="img th-300">
+                                                <img [src]="item.medias[0].file" alt="" class="img-cover">
+                                            </div>
+                                        </div>
+                                    </div>                                 
+                                </div>
+                                <div class="slider-controls">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
        
         <!--  Start popular cat  -->
-        <section class="tc-popular-cat-style1 pt-30 pb-50">
+        <section class="tc-popular-cat-style1 pt-10 pb-50">
             <div class="container">
                 <div class="sec-title">
                     <div class="row align-items-center">
@@ -155,7 +187,7 @@
                     <h3 class="fsz-30 me-lg-5"> Produits de la semaine </h3>
                     <div class="countdown bg-red1 text-white">
                         <span class="icon me-2"> <i class="las la-hourglass-half"></i> </span> 
-                        <p class="me-2"> Expires in: </p>
+                        <p class="me-2"> Expire dans: </p>
                         <div class="item">
                             <span id="days"></span>
                             <span> d </span>
@@ -212,7 +244,7 @@
             </div>
 
             <div class="row">
-                <div class="custom-col" *ngFor="let item of products | slice:22:35">
+                <div class="custom-col" *ngFor="let item of products | slice:22:37">
                     <app-product-main-card [product]="item"></app-product-main-card>
                 </div>
             </div>

@@ -14,12 +14,56 @@
                         <h3 class="color-green2 mb-10"> Bienvenue à nouveau </h3>
                         <p class="fsz-14 text-uppercase ltspc-2 color-999"> connectez-vous pour continuer </p>
                     </div>
-                    <form (ngSubmit)="login()" >
-                        <!-- Adresse e-mail -->
-                        <div class="form-group mb-4">
-                            <label for="">Adresse e-mail</label>
-                            <input [(ngModel)]="user.username" name="username" type="text" class="form-control" placeholder="Exemple@gmail.com" required>
-                        </div>
+
+                    <form  >
+
+                        <!--tell-->
+                        <div class="row d-flex justify-content-start">
+                            <div class="col-md-4">
+                              <div class="dropdown">
+                                <button 
+                                  class="dropdown-toggle form-control d-flex align-items-center" 
+                                  (click)="toggleDropdown()"
+                                >
+                                  <img [src]="inputSelectedCountry.flag" alt="Flag" class="me-2" width="30">
+                                  {{ inputSelectedCountry.phoneCode }}
+                                </button>
+                                <div class="dropdown-menu p-2" [class.show]="dropdownOpen" style="max-height: 300px; overflow-y: auto; width: 100%;">
+                                  <!-- Barre de recherche -->
+                                  <input 
+                                    type="text" 
+                                    class="form-control mb-2" 
+                                    placeholder="Rechercher un pays..."
+                                    [(ngModel)]="searchText"
+                                    name="searchText"
+                                    (input)="filterCountries()"
+                                  >
+                                  <!-- Liste des pays -->
+                                  <ul class="list-unstyled mb-0">
+                                    <li 
+                                      *ngFor="let country of filteredCountries" 
+                                      (click)="selectCountry(country)" 
+                                      class="dropdown-item d-flex align-items-center"
+                                      style="cursor: pointer;"
+                                    >
+                                      <img [src]="country.flag" alt="Flag" width="30" class="me-2">
+                                      {{ country.phoneCode }}
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-8">
+                              <input 
+                                type="number" 
+                                class="form-control" 
+                                [(ngModel)]="number"
+                                name="number"
+                                id="inlineFormInputGroupUsername" 
+                                placeholder="Tel">
+                            </div>
+                          </div>
+                          
 
                         <!-- Mot de passe -->
                         <div class="form-group show_hide_password mb-4">
@@ -33,7 +77,7 @@
 
                         <!-- Bouton de connexion -->
                         <div class="btns">
-                            <button type="submit" role="button"  class="btn btn-bloc butn bg-green2 text-white radius-4 fw-500 fsz-14 text-uppercase text-center mt-40 px-5"> <span> Connexion </span> </button>
+                            <button (click)="login()" role="button"  class="btn btn-bloc butn bg-green2 text-white radius-4 fw-500 fsz-14 text-uppercase text-center mt-40 px-5"> <span> Connexion </span> </button>
                         </div>
 
                         <!-- Lien d'inscription -->

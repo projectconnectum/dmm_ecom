@@ -13,9 +13,7 @@ import { api } from "../env/api.env";
 
    
   getWorldountry():Observable<any>{
-    return this.http.get(`https://countriesnow.space/api/v0.1/countries/flag/images`).pipe(
-        retry(5)
-      );
+    return this.http.get<any>(`https://restcountries.com/v3.1/all`)
   }
 
 

@@ -327,6 +327,7 @@ adresse:any={
           duration: 10000,
           position: "topRight",
         });
+        this.router.navigate(['/main/profile?tab_id=pills-prof2']);
       },
       (err) => {
         console.log(err);

@@ -27,7 +27,7 @@
                                 <ul class="links-ul">
                                     <li class="">
                                         <a  href="#"  role="button" >
-                                            <i class="la la-dollar-sign me-1"></i> CFA
+                                            XOF
                                         </a>
                                        
                                     </li>
@@ -77,9 +77,10 @@
                     </div>
                     <div class="side-nav d-none d-lg-flex">
                         <div class="icons">
-                            <a href="#" class="icon-link"> <i class="las la-sync-alt"></i> </a>
                             <a  class="icon-link" href="/main/favoris/"> <i class="lar la-heart"></i> </a>
+                            <a  class="icon-link" href="main/profile?tab_id=pills-prof2" *ngIf="user!=null"> <i class="pi pi-shopping-cart"></i> </a>
                             <a  class="icon-link" href="/main/profile/"> <i class="las la-user" ></i> </a>
+                            
                         </div>
                         <div class="text-item ms-3" *ngIf="user==null">
                             <small class="fsz-11 color-666 text-uppercase d-block"> Bienvenue </small>
