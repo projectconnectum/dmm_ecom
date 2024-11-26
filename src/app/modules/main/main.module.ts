@@ -21,6 +21,9 @@ import { FormsModule } from '@angular/forms';
 
 import { DialogModule } from 'primeng/dialog';
 import { FavorisComponent } from './pages/favoris/favoris.component';
+import { ConditionComponent } from './components/footer/condition/condition.component';
+import { FaqComponent } from './components/footer/faq/faq.component';
+import { ContactComponent } from './components/footer/contact/contact.component';
 
 
 
@@ -41,7 +44,10 @@ import { FavorisComponent } from './pages/favoris/favoris.component';
     ShopsDetailComponent,
     ShimerComponent,
     ProfileComponent,
-    FavorisComponent
+    FavorisComponent,
+    ConditionComponent,
+    FaqComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

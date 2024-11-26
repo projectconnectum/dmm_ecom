@@ -1,0 +1,141 @@
+<div class="home-style1">
+
+    <app-header></app-header>
+
+    <div class="container mx-auto px-4 py-5">
+        <h1 class="text-center mb-4">
+          <span class="color-blue1">FAQ</span>
+          <span> - Questions Fréquemment Posées</span>
+        </h1>
+        
+        <p class="text-center mb-5">
+          Obtenez des réponses à vos questions sur notre superbe application ! Apprenez-en plus et explorer ses fonctionnalités dès maintenant.
+        </p>
+      
+        <div class="faq-list">
+          <div class="faq-item">
+            <button (click)="toggleItem(0)" class="faq-question" [class.active]="openIndex === 0">
+              <span>Qu'est-ce qu'une centrale d'achat ?</span>
+              <i class="pi" [ngClass]="openIndex === 0 ? 'pi-minus' : 'pi-plus'"></i>
+            </button>
+            
+            <div class="faq-answer" [ngClass]="{'show': openIndex === 0}">
+              <p>Une centrale d'achat est une structure qui regroupe des entreprises afin de négocier des prix plus avantageux auprès des fournisseurs.
+                Elle permet aux entreprises d'acheter des produits ou des services en gros et en détail</p>
+            </div>
+          </div>
+      
+          <div class="faq-item">
+            <button (click)="toggleItem(1)" class="faq-question" [class.active]="openIndex === 1">
+              <span>Dream More vend où et à qui ?</span>
+              <i class="pi" [ngClass]="openIndex === 1 ? 'pi-minus' : 'pi-plus'"></i>
+            </button>
+            
+            <div class="faq-answer" [ngClass]="{'show': openIndex === 1}">
+              <p>La centrale d’achat Dream More se veut vendre à tout le monde des produits du quotidien et de saison sur commande.
+                Que vous soyez un particulier ou une entreprise, notre application est la plateforme de confiance qu’il vous faut !</p>
+            </div>
+          </div>
+      
+          <div class="faq-item">
+            <button (click)="toggleItem(2)" class="faq-question" [class.active]="openIndex === 2">
+              <span>Quels sont les avantages d'adhérer à une centrale d'achat ?</span>
+              <i class="pi" [ngClass]="openIndex === 2 ? 'pi-minus' : 'pi-plus'"></i>
+            </button>
+            
+            <div class="faq-answer" [ngClass]="{'show': openIndex === 2}">
+              <p>Les avantages de l’application Dream More sont tels : <br>
+ 
+                Réduction des coûts : les entreprises adhérentes peuvent réaliser des économies importantes sur leurs achats. <br>
+                 
+                Accès à un large choix de produits et services. <br>
+                 
+                Gain de temps. <br>
+                 
+                Possibilité de discuter la taille, quantités, coût de livraison à son domicile ou lieu de travail. <br>
+                 
+                Réactivité du service client</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button (click)="toggleItem(3)" class="faq-question" [class.active]="openIndex === 3">
+              <span>Quelles sont les boutiques disponibles sur Dream More ?</span>
+              <i class="pi" [ngClass]="openIndex === 3 ? 'pi-minus' : 'pi-plus'"></i>
+            </button>
+            
+            <div class="faq-answer" [ngClass]="{'show': openIndex === 3}">
+              <p>
+                Il existe différents types de boutiques,en fonction de leur secteur d'activité ou de leur taille. <br>
+                 
+                Dans une liste non exhaustive de produits que l’on retrouve dans les boutiques, on peut distinguer : <br>
+                 
+                1- DreamAgro : tracteur, Lait, café, poissons, céréales, blé, vache, étendue de terrain verdâtre <br>
+                 
+                2-DreamFashion : homme, femme et enfant de teint noir en différentes tenues colorées <br>
+                 
+                3- DreamAuto : camion, voiture de luxe, fourgon, Pièces détachées + différents accessoires de véhicule et autres <br>
+                 
+                4- DreamBag : Sac à main, valise, sac à dos, sac à bandoulière <br>
+                 
+                5- DreamShoes : cuir, baskets (Nike, Adidas, New Balance) ballerine, chaussure taille haute, bottes masculines et féminines, tapettes, mulles. <br>
+                 
+                6- DreamTech : Antennes réseaux, commutateurs, Câbles électriques, ordinateur, caméra de surveillance, équipement électrique, Téléphone, ordi, casques audio <br>
+                 
+                7- DreamToys : Jeux de société, Mini parc, figurines (Sangoku, Naruto, soldat, dragonet dinosaure), peluches, puzzle <br>
+                 
+                8- DreamHealth : équipement de fitness, microscope, stéthoscope, genouillère <br>
+                 
+                9- DreamBeauty : Mèches, produits de maquillage, parfums, perruques, peigne, séchoirs, <br>
+                 
+                10- Dream Construction : Peinture, robinet, climatisation, carreaux, sanitaires <br>
+                 
+                11- DreamDeko : veilleuses, lampadaires, meubles, tables, ustensiles de cuisine, mobilier de bureau <br>
+                 
+                12- DreamEngine : moteur de voiture, camion, moulin, machine agricole, La chargeuse, La mini-chargeuse, La pelleteuse, La tractopelle <br>
+                 
+                13- DreamPackage : Sac d’emballage, emballages en carton, plastiques, bois, en conteneur, articles de papeterie <br>
+                 
+                14- Dreamglasses : Porté par Homme - Femme - Enfant noir de peau Lunettes ovales, Les lunettes Pantos, Lunettes carrées, Lunettes rectangulaires, Lunettes pilote / aviateur, Lunettes clubmasters, Les lunettes wayfarer, Les lunettes papillon.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button (click)="toggleItem(5)" class="faq-question" [class.active]="openIndex === 5">
+              <span>Quels sont vos moyens et la durée de livraison de tout produit sur Dream More ?</span>
+              <i class="pi" [ngClass]="openIndex === 5 ? 'pi-minus' : 'pi-plus'"></i>
+            </button>
+            
+            <div class="faq-answer" [ngClass]="{'show': openIndex === 5}">
+              <p>
+                En tenant compte du type de produit (poids, quantité, taille), chaque commande est sujette à : <br>
+                08 - 15 jours par Avion <br>
+                35 - 60 jours par Bateau <br>
+                2 - 5 jours par Avion express <br>
+
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button (click)="toggleItem(6)" class="faq-question" [class.active]="openIndex === 6">
+              <span>Comment nous contacter ?</span>
+              <i class="pi" [ngClass]="openIndex === 6 ? 'pi-minus' : 'pi-plus'"></i>
+            </button>
+            
+            <div class="faq-answer" [ngClass]="{'show': openIndex === 6}">
+              <p>
+                contact@dreammore.co
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      
+      
+    <app-footer></app-footer>
+  </div>
+  
+  

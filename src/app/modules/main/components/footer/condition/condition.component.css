@@ -1,0 +1,29 @@
+.card-header h1 {
+    font-size: 2rem;
+  }
+  
+  .card-body h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .card-footer p {
+    margin: 0;
+  }
+  
+  .btn-warning {
+    background-color: #FD9636;
+    border: none;
+    color: black;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e88532;
+    color: white;
+  }
+  

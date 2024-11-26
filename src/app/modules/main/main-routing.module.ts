@@ -9,6 +9,9 @@ import { ShopsComponent } from './pages/shops/shops.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FavorisComponent } from './pages/favoris/favoris.component';
 import { ShopsDetailComponent } from './pages/shops/shops-detail/shops-detail.component';
+import { ConditionComponent } from './components/footer/condition/condition.component';
+import { FaqComponent } from './components/footer/faq/faq.component';
+import { ContactComponent } from './components/footer/contact/contact.component';
 
 const routes: Routes = [
 
@@ -24,6 +27,9 @@ const routes: Routes = [
       {path:'profile',component:ProfileComponent},
       {path:'favoris',component:FavorisComponent},
       {path:'shop/detail',component:ShopsDetailComponent},
+      {path:'term-condition',component:ConditionComponent},
+      {path:'faq',component:FaqComponent},
+      {path:'contact',component:ContactComponent},
     
 ]}]
 
