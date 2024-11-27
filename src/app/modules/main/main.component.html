@@ -1,1 +1,28 @@
 <router-outlet></router-outlet>
+
+<!-- Modal for login -->
+<p-dialog 
+  header="Connectez-vous"
+  [(visible)]="isLoginDialogVisible" 
+  [closable]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+  (onHide)="closeLoginModal()"
+>
+  <app-login></app-login>
+</p-dialog>
+
+
+<!-- Modal for register -->
+<p-dialog 
+  header="Inscrivez-vous"
+  [(visible)]="isRegisterDialogVisible" 
+  [closable]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+  (onHide)="closeRegisterModal()"
+>
+  <app-register></app-register>
+</p-dialog>

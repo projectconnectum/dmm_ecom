@@ -79,12 +79,12 @@
                         <div class="icons">
                             <a  class="icon-link" href="/main/favoris/"> <i class="lar la-heart"></i> </a>
                             <a  class="icon-link" href="main/profile?tab_id=pills-prof2" *ngIf="user!=null"> <i class="pi pi-shopping-cart"></i> </a>
-                            <a  class="icon-link" href="/main/profile/"> <i class="las la-user" ></i> </a>
+                            <a  class="icon-link" role="button" (click)="clickProfile()"> <i class="las la-user" ></i> </a>
                             
                         </div>
                         <div class="text-item ms-3" *ngIf="user==null">
                             <small class="fsz-11 color-666 text-uppercase d-block"> Bienvenue </small>
-                            <a href="/auth/login/" class="fsz-14 text-uppercase fw-bold"> Se connecter / S'inscrire </a>
+                            <a role="button" (click)="openLoginModal()" class="fsz-14 text-uppercase fw-bold"> Se connecter / S'inscrire </a>
                         </div>
                         <div class="text-item ms-3" *ngIf="user!=null">
                             <small class="fsz-11 color-666 text-uppercase d-block"> Bienvenue </small>

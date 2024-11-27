@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/services/auth.service';
 import { GlobaleService } from 'src/app/services/globale.service';
+import { ModalService } from 'src/app/services/globale/modal.service';
 
 @Component({
   selector: 'app-login',
@@ -20,13 +21,26 @@ export class LoginComponent implements OnInit{
   world_country:any[]=[];
   number:any;
 
-  constructor(private authService:AuthService, 
+  constructor(private authService:AuthService, private modalService: ModalService,
    
     private router:Router,private toastService:NgToastService,private globaleService:GlobaleService){}
   ngOnInit(): void {
     this.getWorldCountry();
   
   }
+
+  // close login modal 
+  closeLoginModal(): void {
+    this.modalService.hideLoginModal();
+    window.location.reload();
+  
+  }
+
+  showRegisterModal(){
+    this.modalService.showRegisterModal();
+  }
+
+
 
 
   login(){
@@ -41,12 +55,13 @@ export class LoginComponent implements OnInit{
         console.log(res);
 
         this.authService.setAuthInfo(res);
+        this.closeLoginModal();
 
-        this.router.navigate(['/main/home']).then(
-          ()=>{
-            window.location.reload(); 
-          }
-        );
+        // this.router.navigate(['/main/home']).then(
+        //   ()=>{
+        //     window.location.reload(); 
+        //   }
+        // );
       },
       err=>{
         console.log(err);

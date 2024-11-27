@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategorieService } from 'src/app/services/categorie.service';
+import { ModalService } from 'src/app/services/globale/modal.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit  {
   user:any=localStorage.getItem("user")!=null?JSON.parse(localStorage.getItem("user")!):null
 
   constructor(private categorieService:CategorieService, private productService:ProductService, 
-    private router:Router
+    private router:Router,private modalService: ModalService
   ){}
 
   ngOnInit(): void {
@@ -66,6 +67,23 @@ products=[]
     this.show_widget=!this.show_widget;
   }
 
+  // open loging modal 
+  openLoginModal(): void {
+    this.modalService.showLoginModal();
+  }
+
+  //click in profile
+  clickProfile(){
+    if(this.user!=null){
+      this.router.navigate(['/main/profile']).then(
+        ()=>{
+          window.location.reload();
+        }
+      );
+    }else{
+      this.openLoginModal();
+    }
+  }
  
 
 }

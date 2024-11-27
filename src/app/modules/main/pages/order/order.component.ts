@@ -2,6 +2,7 @@ import { Component, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { GlobaleService } from 'src/app/services/globale.service';
+import { ModalService } from 'src/app/services/globale/modal.service';
 import { ProductService } from 'src/app/services/product.service';
 import { TransactionService } from 'src/app/services/transaction.service';
 
@@ -23,8 +24,8 @@ export class OrderComponent {
 
   loadItem=Array(30).fill(0);
 
-  //isAuth:any=localStorage.getItem("isAuth");
-  isAuth:any="true";
+  isAuth:any=localStorage.getItem("isAuth");
+  
 
 
   // phone input 
@@ -57,29 +58,22 @@ inputSelectedCountry:any ;
 
   ngOnInit(): void {
 
-    if(this.isAuth!="true"){
-      this.router.navigate(["/auth/login"]);
+    this.route.queryParams.subscribe(params => {
+      this.productId = params['id'];
+      this.shopRef = params['shop_ref'];
+      this.getProduct();
 
-    }else if (this.isAuth=="true"){
-      this.route.queryParams.subscribe(params => {
-        this.productId = params['id'];
-        this.shopRef = params['shop_ref'];
-        this.getProduct();
-  
-        console.log('Product ID:', this.productId);
-        console.log('Shop Ref:', this.shopRef);
-      });
-  
-      if (this.productId == null) {
-        this.router.navigate(['/main/home']);
-      }
-    
-      this.getShopInfo(this.shopRef);
+      console.log('Product ID:', this.productId);
+      console.log('Shop Ref:', this.shopRef);
+    });
 
-      this.getWorldCountry();
-    
-
+    if (this.productId == null) {
+      this.router.navigate(['/main/home']);
     }
+  
+    this.getShopInfo(this.shopRef);
+
+    this.getWorldCountry();
     
   }
 
@@ -91,11 +85,15 @@ inputSelectedCountry:any ;
     private transactionService:TransactionService,
     private toastService:NgToastService,
     private globaleService:GlobaleService,
+    private modalService:ModalService,
   ) {}
 
   formatDescription(description: string): string {
     return description.replace(/\n/g, '<br>');
   }
+
+
+  // 
 
   getProduct() {
     this.isLoading = true;
@@ -259,7 +257,12 @@ adresse:any={
   // create a commade 
 
   Addcommande() {
-    // Validation des données avant l'envoi
+
+    if (this.isAuth!="true") {
+      this.modalService.showLoginModal();
+      
+    } else {
+        // Validation des données avant l'envoi
     if (!this.product) {
       this.toastService.error({
         detail: "Produit manquant",
@@ -338,6 +341,12 @@ adresse:any={
         });
       }
     );
+      
+    }
+
+
+
+  
   }
 
 

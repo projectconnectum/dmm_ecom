@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/services/auth.service';
+import { ModalService } from 'src/app/services/globale/modal.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent {
     "password":""
   }
 
-  constructor(private authService:AuthService,private router:Router,private toastService:NgToastService){}
+  constructor(private authService:AuthService,private router:Router,private toastService:NgToastService,private modalService:ModalService){}
 
 
   register(){
@@ -26,11 +27,17 @@ export class RegisterComponent {
       res=>{
         console.log(res);
         this.authService.setAuthInfo(res);
-        this.router.navigate(['/main/home']).then(
-          ()=>{
-            window.location.reload(); 
-          }
-        );
+
+        this.modalService.hideRegisterModal();
+        window.location.reload(); 
+
+
+
+        // this.router.navigate(['/main/home']).then(
+        //   ()=>{
+            
+        //   }
+        // );
       },
       err=>{
         console.log(err);
@@ -42,6 +49,12 @@ export class RegisterComponent {
           });
       }
     );
+  }
+
+
+
+  showLoginModal(){
+    this.modalService.showLoginModal();
   }
 
 }

@@ -24,6 +24,7 @@ import { FavorisComponent } from './pages/favoris/favoris.component';
 import { ConditionComponent } from './components/footer/condition/condition.component';
 import { FaqComponent } from './components/footer/faq/faq.component';
 import { ContactComponent } from './components/footer/contact/contact.component';
+import { AuthModule } from '../auth/auth.module';
 
 
 
@@ -54,7 +55,9 @@ import { ContactComponent } from './components/footer/contact/contact.component'
     MainRoutingModule,
     FormsModule,
     DialogModule,
-   
+    AuthModule
+    
+
     
   ]
 })

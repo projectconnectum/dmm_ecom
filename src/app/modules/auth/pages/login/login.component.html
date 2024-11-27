@@ -3,12 +3,8 @@
     <!-- Start login -->
     <section class="tc-login p-5 radius-4 bg-white mt-3 mb-3">
         <div class="row align-items-center justify-content-around">
-            <div class="col-lg-4">
-                <div class="img">
-                    <img src="assets/common/assets/imgs/illustration.png" alt="">
-                </div>
-            </div>
-            <div class="col-lg-5">
+           
+            <div class="col-lg-12">
                 <div class="login-form">
                     <div class="title mb-30">
                         <h3 class="color-green2 mb-10"> Bienvenue à nouveau </h3>
@@ -81,7 +77,7 @@
                         </div>
 
                         <!-- Lien d'inscription -->
-                        <a routerLink="/auth/register/" class="text-uppercase color-999 fsz-13 mt-3">nouvel utilisateur ? <span class="color-green2">Inscrivez-vous</span></a>
+                        <a role="button" (click)="showRegisterModal()" class="text-uppercase color-999 fsz-13 mt-3">nouvel utilisateur ? <span class="color-green2">Inscrivez-vous</span></a>
                     </form>
                 </div>
             </div>
