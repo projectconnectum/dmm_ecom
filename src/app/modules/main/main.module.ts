@@ -25,6 +25,7 @@ import { ConditionComponent } from './components/footer/condition/condition.comp
 import { FaqComponent } from './components/footer/faq/faq.component';
 import { ContactComponent } from './components/footer/contact/contact.component';
 import { AuthModule } from '../auth/auth.module';
+import { SearchComponent } from './pages/search/search.component';
 
 
 
@@ -48,7 +49,8 @@ import { AuthModule } from '../auth/auth.module';
     FavorisComponent,
     ConditionComponent,
     FaqComponent,
-    ContactComponent
+    ContactComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategorieService } from 'src/app/services/categorie.service';
 import { ModalService } from 'src/app/services/globale/modal.service';
+import { SearchService } from 'src/app/services/globale/search.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -13,10 +14,12 @@ export class HeaderComponent implements OnInit  {
 
   categories:any[]=[];
 
+  searchItem:String="";
+
   user:any=localStorage.getItem("user")!=null?JSON.parse(localStorage.getItem("user")!):null
 
   constructor(private categorieService:CategorieService, private productService:ProductService, 
-    private router:Router,private modalService: ModalService
+    private router:Router,private modalService: ModalService, private searchService:SearchService 
   ){}
 
   ngOnInit(): void {
@@ -85,5 +88,11 @@ products=[]
     }
   }
  
+  // click 
+
+  searchProduct(){
+    this.searchService.setSearchItem(this.searchItem);
+    this.router.navigate(['/main/search/']);
+  }
 
 }

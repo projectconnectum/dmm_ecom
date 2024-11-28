@@ -12,6 +12,7 @@ import { ShopsDetailComponent } from './pages/shops/shops-detail/shops-detail.co
 import { ConditionComponent } from './components/footer/condition/condition.component';
 import { FaqComponent } from './components/footer/faq/faq.component';
 import { ContactComponent } from './components/footer/contact/contact.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
 
@@ -30,6 +31,7 @@ const routes: Routes = [
       {path:'term-condition',component:ConditionComponent},
       {path:'faq',component:FaqComponent},
       {path:'contact',component:ContactComponent},
+      {path:'search',component:SearchComponent},
     
 ]}]
 

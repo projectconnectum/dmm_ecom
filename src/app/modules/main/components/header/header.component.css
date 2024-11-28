@@ -2,3 +2,50 @@
     max-width: 200px; /* Ajustez la largeur maximale comme souhaité */
     height: auto; /* Maintient les proportions */
 }
+
+/* Conteneur principal */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000; /* Bordure noire */
+    border-radius: 25px;    /* Arrondi complet */
+    overflow: hidden;
+    background-color: #fff; /* Fond blanc pour tout le champ */
+    height: 40px;          /* Hauteur ajustée */
+  }
+  
+  /* Champ de recherche */
+  .search-input {
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    flex: 1;               /* Prend tout l'espace disponible */
+    font-size: 14px;
+    color: #000;           /* Texte noir */
+    background-color: #fff; /* Fond blanc */
+  }
+  
+  .search-input::placeholder {
+    color: #ccc;           /* Couleur du placeholder */
+  }
+  
+  /* Icône de recherche */
+  .search-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* Fond noir */
+    color: #fff;           /* Icône blanche */
+    width: 40px;           /* Taille du rond */
+    height: 40px;          /* Taille du rond */
+    border-radius: 50%;    /* Cercle parfait */
+    cursor: pointer;
+  }
+  
+  /* Suppression des bordures inutiles */
+  .search-container input:focus {
+    outline: none;
+  }
+  
+  

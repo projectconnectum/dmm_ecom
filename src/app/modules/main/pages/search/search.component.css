@@ -1,0 +1,63 @@
+/* Styles par défaut - 5 colonnes */
+.custom-col {
+    width: 20%; /* Chaque carte occupe 20% de la ligne */
+    float: left;
+    padding: 0.5rem; /* Espacement entre les cartes */
+    box-sizing: border-box;
+  }
+  
+  /* Pour les tablettes et écrans moyens */
+  @media (max-width: 1024px) {
+    .custom-col {
+      width: 33.33%; /* 3 colonnes par ligne */
+    }
+  }
+  
+  /* Pour les mobiles */
+  @media (max-width: 768px) {
+    .custom-col {
+      width: 50%; /* 2 colonnes par ligne */
+    }
+  }
+  
+  /* Pour les très petits écrans */
+  @media (max-width: 480px) {
+    .custom-col {
+      width: 50%; /* 2 colonne par ligne */
+    }
+  }
+  
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .empty-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: #4a4a4a;
+  }
+  
+  .empty-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+  
+  .empty-message {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0.5rem 0;
+  }
+  
+  .empty-subtext {
+    font-size: 1rem;
+    color: #888;
+  }
+  

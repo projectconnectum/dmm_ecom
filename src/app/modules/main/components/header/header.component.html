@@ -105,24 +105,27 @@
         <div class="search-nav-style3">
             <div class="container">
                 <div class="row align-items-center gx-0">
-                    <div class="col-lg-5">
-                        <div class="search-cat">
-                            <div class="input-group flex-nowrap">
-                                <select name="name" class="form-select" style="width: 40%;">
-                                    
-                                    <option value="" *ngFor="let item of categories"> {{item.name}} </option>
-                                   
-                                </select>
-                                <input type="text" class="form-control" placeholder="Rechercher un produit...">
-                                <a href="#" class="search-btn"> <i class="fal fa-search"></i> </a>
-                            </div>
+                    <div class="col-lg-3">
+                        <div class="search-container">
+                          <input
+                            type="text"
+                            placeholder="Rechercher..."
+                            class="search-input"
+                            [(ngModel)]="searchItem"
+                            name="searchItem"
+                          />
+                          <div class="search-icon-container" (click)="searchProduct()">
+                            <i class="pi pi-search search-icon"></i>
+                          </div>
                         </div>
-                    </div>
-                    <div class="col-lg-7 d-none d-lg-block">
+                      </div>
+                      
+                      
+                    <div class="ms-0 col-lg-9 d-none d-lg-block ">
                         <div class="delivery-features ps-lg-5">
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <a href="#" class="feat-link"> <i class="la la-shipping-fast fs-6 me-2"></i> <span> Livraison gratuite  </span> </a>
+                                    <a href="#" class="feat-link"> <i class="la la-shipping-fast fs-6 me-2"></i> <span> Livraison partout en afrique  </span> </a>
                                 </div>
                                 <div class="col-lg-4">
                                     <a href="#" class="feat-link"> <i class="las la-redo-alt fs-6 me-2"></i> <span> Retour sous 30 jours </span> </a>

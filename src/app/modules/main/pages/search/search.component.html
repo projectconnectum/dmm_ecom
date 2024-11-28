@@ -1,0 +1,68 @@
+<body class="home-style3">
+
+    <div class="body-container">
+
+
+        
+
+        <div class="container container-llgg">
+
+           <app-header></app-header>
+
+
+            <!--Contents-->
+            <main>
+
+                <!--  Start breadcrumb  -->
+                <section class="tc-breadcrumb-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                          <li class="breadcrumb-item color-999"><a href="/main/home/">Accueil</a></li>
+                          <li class="breadcrumb-item color-999"><a href="/main/home/">Recheche</a></li>
+                          <li class="breadcrumb-item active color-000" aria-current="page">{{searchItem}}</li>
+                        </ol>
+                      </nav>
+                </section>
+                <!--  End breadcrumb  -->
+
+               
+
+
+                 <!--  SPopular product -->
+            <section class="tc-products-style6 p-30 radius-4 bg-white mt-3 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="container" *ngIf="isLoading">
+                    <app-shimer [item]="30"></app-shimer>
+                </div>
+                
+                <div class="container" *ngIf="!isLoading">
+                    <div class="row" >
+                        <div class="custom-col" *ngFor="let item of products " >
+                            <app-product-main-card [product]="item"></app-product-main-card>
+                        </div>
+                        <div *ngIf="products.length === 0" class="empty-products">
+                            <img src="assets/common/assets/imgs/no_product.png" alt="No products available" class="empty-image">
+                            <h2 class="empty-message">Aucun produit trouvé</h2>
+                            <p class="empty-subtext">Revenez bientôt ou explorez d'autres catégories.</p>
+                          </div>
+                    </div>
+                    
+                
+                </div>
+            </section>
+    <!--  End suggest-today  -->
+
+
+
+
+
+            </main>
+            <!--End-Contents-->
+
+        </div>
+
+    </div>
+
+<app-footer></app-footer>
+   
+
+</body>

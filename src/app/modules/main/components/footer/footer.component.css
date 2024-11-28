@@ -1,9 +1,13 @@
 /* Style général du footer */
 .tc-footer-style1 {
-    background-color: black;
+    
     color: #fff;
     padding: 20px 0;
     font-size: 14px;
+}
+.footer-desktop{
+    background-color: black;
+
 }
 
 /* Images, icônes et textes */
@@ -134,3 +138,60 @@
     padding: 2px;            /* Espacement pour mieux afficher la bordure */
     display: block;          /* Assure un bon rendu dans les conteneurs */
   }
+
+  /* Section mobile : fond blanc */
+  .footer-mobile {
+    background-color: white;
+    color: black;
+    padding: 20px 0;
+  }
+  
+
+  
+  /* Icônes des réseaux sociaux */
+  .foot-social2 a {
+    margin: 0 10px;
+    color: black; /* Noir pour fond blanc */
+    font-size: 20px;
+  }
+  
+  /* Liens dans le footer */
+  .footer-links a {
+    color: black;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 14px;
+  }
+  
+  /* Boutons de téléchargement */
+  .app-download img {
+    width: 150px;
+    margin: 5px auto;
+  }
+  
+  /* Moyens de paiement */
+  .payment-methods2 img {
+    width: 100px;
+  }
+
+
+  /* Cacher le footer desktop sur les écrans inférieurs à 992px */
+@media (max-width: 991px) {
+    .footer-desktop {
+      display: none !important;
+    }
+    .footer-mobile {
+      display: block !important;
+    }
+  }
+  
+  /* Cacher le footer mobile sur les écrans supérieurs ou égaux à 992px */
+  @media (min-width: 992px) {
+    .footer-desktop {
+      display: block !important;
+    }
+    .footer-mobile {
+      display: none !important;
+    }
+  }
+  

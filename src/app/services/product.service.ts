@@ -94,6 +94,16 @@ import { api } from "../env/api.env";
     }
     return this.http.post<any>(api.url+'products/search',data);
   }
-    
+    // searchProduct by name
+
+    searchProduct(name:any):Observable<any>{
+      const data={
+        "query":name,
+        "page":1,
+        "limit":40
+      }
+      return this.http.post<any>(api.url+'products/search',data);
+    }
+
 
   }

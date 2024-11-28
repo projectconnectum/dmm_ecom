@@ -1,111 +1,149 @@
 <!-- Début du pied de page -->
 <footer class="tc-footer-style1">
 
-    <div class="container">
+    <!--footer ecran desktop-->
+
+    <div class="footer-desktop d-none-desktop d-lg-block">
+        <div class="container">
       
-        <div class="foot-content text-white">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="foot-info text-white ms-10">
-
-                        <img  src="assets/favicon/android-chrome-512x512.png"  style="width: 50%;height:50%;" class="ms-10" alt="Logo" >
-
-                        <a class="fw-bold color-blue1 mb-20"> (025) 3686 25 16 </a>                   
-
-                        <div class="foot-social mt-10">
-                            
-                            <a  href="https://www.facebook.com/Dreammoreapp" target="_blank"> <i class="fab fa-facebook-f"></i> </a>
-                            <a href="https://www.instagram.com/dreammore_bientot/" target="_blank"> <i class="fab fa-instagram"></i> </a>
-                            <a href="https://www.tiktok.com/@dreammore_?lang=en" target="_blank"> <i class="pi pi-tiktok"></i> </a>
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7264725541084151808" target="_blank"> <i class="pi pi-linkedin"></i> </a>
-                        </div>
-                       
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <p class="fsz-16 mb-30"> Catégories principales </p>
-                        <ul class="links">
-                            <li  *ngFor="let item of categories|slice:0:6"> <a role="button" [href]="'/main/product/cat?id=' + item.id"> {{item.name}} </a> </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <p class="fsz-18 mb-30"> Entreprise </p>
-                        <ul class="links">
-                            <li> <a href="#"> À propos de dreammore </a> </li>
-                            <li> <a href="/main/contact/"> Contact </a> </li>
-                            <li> <a href="#"> Carrière </a> </li>
-                            <li> <a href="#"> Blog </a> </li>
-                            <li> <a href="#"> Plan du site </a> </li>
-                            <li> <a href="#"> Localisation des magasins </a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <p class="fsz-18 mb-30"> Centre d'aide </p>
-                        <ul class="links">
-                            <li> <a href="#"> Service client </a> </li>
-                            <li> <a href="#"> Politique </a> </li>
-                            <li> <a href="/main/term-condition/"> Termes & Conditions </a> </li>
-                            <li> <a href="/main/profile?tab_id=pills-prof2"> Suivi de commande </a> </li>
-                            <li> <a href="/main/faq/"> FAQs </a> </li>
-                            <li> <a href="/main/profile/"> Mon compte </a> </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="links-item mt-5 mt-lg-0">
-                        <p class="fsz-18 mb-30"> Partenaire </p>
-                        <ul class="links">
-                            <li> <a href="#"> Devenir vendeur </a> </li>
-                            <li> <a href="#"> Affiliation </a> </li>
-                            <li> <a href="#"> Publicité </a> </li>
-                            <li> <a href="#"> Partenariat </a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="app-download mt-5 mt-lg-0">
-                        <p class="fsz-18 mb-30">Téléchargez l'app</p>
-                        
-                        <div class="download-buttons mt-2 ms-0">
-                            <a href="#" class="btn-app ">
-                                <img src="assets/common/assets/imgs/appstore.png" class="img-rounded-bordered"  alt="App Store" style="width: 150%;">
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.dreammore.dreammore1" target="_blank" class="btn-app mt-2">
-                                <img src="assets/common/assets/imgs/playstore.png" class="img-rounded-bordered"  alt="Google Play" style="width: 100%;">
-                            </a>
+            <div class="foot-content text-white">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="foot-info text-white ms-10">
+    
+                            <img  src="assets/favicon/android-chrome-512x512.png"  style="width: 50%;height:50%;" class="ms-10" alt="Logo" >
+    
+                            <a class="fw-bold color-blue1 mb-20"> (025) 3686 25 16 </a>                   
+    
+                            <div class="foot-social mt-10">
+                                
+                                <a  href="https://www.facebook.com/Dreammoreapp" target="_blank"> <i class="fab fa-facebook-f"></i> </a>
+                                <a href="https://www.instagram.com/dreammore_bientot/" target="_blank"> <i class="fab fa-instagram"></i> </a>
+                                <a href="https://www.tiktok.com/@dreammore_?lang=en" target="_blank"> <i class="pi pi-tiktok"></i> </a>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7264725541084151808" target="_blank"> <i class="pi pi-linkedin"></i> </a>
+                            </div>
+                           
                         </div>
                     </div>
+                    <div class="col-lg-2">
+                        <div class="links-item mt-5 mt-lg-0">
+                            <p class="fsz-16 mb-30"> Catégories principales </p>
+                            <ul class="links">
+                                <li  *ngFor="let item of categories|slice:0:6"> <a role="button" [href]="'/main/product/cat?id=' + item.id"> {{item.name}} </a> </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="links-item mt-5 mt-lg-0">
+                            <p class="fsz-18 mb-30"> Entreprise </p>
+                            <ul class="links">
+                                <li> <a href="#"> À propos de dreammore </a> </li>
+                                <li> <a href="/main/contact/"> Contact </a> </li>
+                                <li> <a href="#"> Carrière </a> </li>
+                                <li> <a href="#"> Blog </a> </li>
+                                <li> <a href="#"> Plan du site </a> </li>
+                                <li> <a href="#"> Localisation des magasins </a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="links-item mt-5 mt-lg-0">
+                            <p class="fsz-18 mb-30"> Centre d'aide </p>
+                            <ul class="links">
+                                <li> <a href="#"> Service client </a> </li>
+                                <li> <a href="#"> Politique </a> </li>
+                                <li> <a href="/main/term-condition/"> Termes & Conditions </a> </li>
+                                <li> <a href="/main/profile?tab_id=pills-prof2"> Suivi de commande </a> </li>
+                                <li> <a href="/main/faq/"> FAQs </a> </li>
+                                <li> <a href="/main/profile/"> Mon compte </a> </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="links-item mt-5 mt-lg-0">
+                            <p class="fsz-18 mb-30"> Partenaire </p>
+                            <ul class="links">
+                                <li> <a href="#"> Devenir vendeur </a> </li>
+                                <li> <a href="#"> Affiliation </a> </li>
+                                <li> <a href="#"> Publicité </a> </li>
+                                <li> <a href="#"> Partenariat </a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="app-download mt-5 mt-lg-0">
+                            <p class="fsz-18 mb-30">Téléchargez l'app</p>
+                            
+                            <div class="download-buttons mt-2 ms-0">
+                                <a href="#" class="btn-app ">
+                                    <img src="assets/common/assets/imgs/appstore.png" class="img-rounded-bordered"  alt="App Store" style="width: 150%;">
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.dreammore.dreammore1" target="_blank" class="btn-app mt-2">
+                                    <img src="assets/common/assets/imgs/playstore.png" class="img-rounded-bordered"  alt="Google Play" style="width: 100%;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                   
                 </div>
-               
+                
+                <div class="row" style="background-color: white; color:black;">
+                    <div class="col-lg-12 d-flex justify-content-between align-items-center">
+                      <!-- Texte -->
+                      <p class="mb-0 text-dark text-start">
+                        © 2024 
+                        <a href="#" class="fw-bold color-blue1">Dreammore</a>. 
+                        Tous droits réservés
+                      </p>
+                  
+                      <!-- Image -->
+                      <img 
+                        src="assets/common/assets/imgs/payement.png" 
+                        alt="Moyens de paiement" 
+                        style="width: auto; height: 60px;"
+                      >
+                    </div>
+                  </div>
+                  
             </div>
-            
-            <div class="row" style="background-color: white; color:black;">
-                <div class="col-lg-12 d-flex justify-content-between align-items-center">
-                  <!-- Texte -->
-                  <p class="mb-0 text-dark text-start">
-                    © 2024 
-                    <a href="#" class="fw-bold color-blue1">Dreammore</a>. 
-                    Tous droits réservés
-                  </p>
-              
-                  <!-- Image -->
-                  <img 
-                    src="assets/common/assets/imgs/payement.png" 
-                    alt="Moyens de paiement" 
-                    style="width: auto; height: 60px;"
-                  >
-                </div>
-              </div>
-              
         </div>
     </div>
+
+    <!--footer mobile -->
+
+    <!-- Footer pour mobile -->
+  <div class="footer-mobile d-lg-block-mobile mt-0" style="background-color:white; padding-top:0px;">
+    <div class="container text-center">
+      
+      <!-- Réseaux sociaux -->
+      <div class="foot-social2">
+        <a  href="https://www.facebook.com/Dreammoreapp" target="_blank"> <i class="fab fa-facebook-f"></i> </a>
+        <a href="https://www.instagram.com/dreammore_bientot/" target="_blank"> <i class="fab fa-instagram"></i> </a>
+        <a href="https://www.tiktok.com/@dreammore_?lang=en" target="_blank"> <i class="pi pi-tiktok"></i> </a>
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7264725541084151808" target="_blank"> <i class="pi pi-linkedin"></i> </a>
+      </div>
+
+      <!-- Liens Termes et FAQ -->
+      <div class="footer-links mt-3">
+        <a href="/main/term-condition/">Termes & Conditions</a> |
+        <a href="/main/faq/">FAQ</a>
+      </div>
+
+      <!-- Boutons de téléchargement -->
+      <div class="app-download mt-3">
+        <a href="#"><img src="assets/common/assets/imgs/appstore.png" alt="App Store" style="width: 150px;"></a>
+        <a class="ms-3" href="https://play.google.com/store/apps/details?id=com.dreammore.dreammore1" target="_blank"><img src="assets/common/assets/imgs/playstore.png" alt="Play Store" style="width: 150px;"></a>
+      </div>
+
+         <!-- Moyens de paiement -->
+         <div class="payment-methods2 mt-3">
+            <img src="assets/common/assets/imgs/payement.png"  alt="Moyens de paiement" style="width: 100px;">
+          </div>
+     
+    </div>
+  </div>
 
 
     <div class="mob-navigation d-flex d-lg-none">
