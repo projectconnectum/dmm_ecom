@@ -7,7 +7,7 @@
 .search-container {
     display: flex;
     align-items: center;
-    border: 2px solid #000; /* Bordure noire */
+    border: 1px solid #000; /* Bordure noire */
     border-radius: 25px;    /* Arrondi complet */
     overflow: hidden;
     background-color: #fff; /* Fond blanc pour tout le champ */
