@@ -156,6 +156,7 @@ export class ProfileComponent implements OnInit{
   }
 
   paid(id:any){
+    console.log(id);
     this.transactionService.paidOrder(id).subscribe(
       res=>{
         console.log(res);

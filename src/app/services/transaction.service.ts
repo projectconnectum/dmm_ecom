@@ -12,7 +12,9 @@ import { api } from "../env/api.env";
     constructor(private http: HttpClient) { }
 
     header:HttpHeaders=new HttpHeaders({
-        'Authorization': 'Bearer ' + localStorage.getItem("token")
+        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+        'Content-Type': 'application/json'
+
       });
 
     
@@ -41,7 +43,7 @@ import { api } from "../env/api.env";
 
 
       paidOrder(id:any):Observable<any>{
-        return this.http.post<any>(api.url+'commands/orders/markaspaid/'+id,{headers:this.header});
+        return this.http.put<any>("https://api.dreammore.co/"+'commands/orders/markaspaid/'+id,{headers:this.header});
       };
 
 

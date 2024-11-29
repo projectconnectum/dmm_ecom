@@ -148,31 +148,51 @@
                                     </div>
                                   </div>
                   
-                                  <div class="ms-0 input-group phone-input">
-                                    <!-- Sélection des pays avec drapeaux -->
-                                    <select 
-                                      class="form-select" 
-                                      [(ngModel)]="inputSelectedCountry" 
-                                      >
-                                      <option *ngFor="let country of world_country" [ngValue]="country">
-
-                                      
-                                       <span>
-                                        {{ country.iso2 }}
-                                       </span>
-                                      
-                                         
-                                      </option>
-                                    </select>
-                                  
-                                    <!-- Champ de saisie téléphonique -->
-                                    <input 
-                                      type="tel" 
-                                      class="form-control phone-input-field" 
-                                      placeholder="Entrez votre numéro" 
-                                      value="">
+                                  <div class="row d-flex justify-content-start">
+                                    <div class="col-md-4">
+                                      <div class="dropdown">
+                                        <button 
+                                          class="dropdown-toggle form-control d-flex align-items-center" 
+                                          (click)="toggleDropdown()"
+                                        >
+                                          <img [src]="inputSelectedCountry.flag" alt="Flag" class="me-2" width="30">
+                                          {{ inputSelectedCountry.phoneCode }}
+                                        </button>
+                                        <div class="dropdown-menu p-2" [class.show]="dropdownOpen" style="max-height: 300px; overflow-y: auto; width: 100%;">
+                                          <!-- Barre de recherche -->
+                                          <input 
+                                            type="text" 
+                                            class="form-control mb-2" 
+                                            placeholder="Rechercher un pays..."
+                                            [(ngModel)]="searchText"
+                                            name="searchText"
+                                            (input)="filterCountries()"
+                                          >
+                                          <!-- Liste des pays -->
+                                          <ul class="list-unstyled mb-0">
+                                            <li 
+                                              *ngFor="let country of filteredCountries" 
+                                              (click)="selectCountry(country)" 
+                                              class="dropdown-item d-flex align-items-center"
+                                              style="cursor: pointer;"
+                                            >
+                                              <img [src]="country.flag" alt="Flag" width="30" class="me-2">
+                                              {{ country.phoneCode }}
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                      <input 
+                                        type="number" 
+                                        class="form-control" 
+                                        [(ngModel)]="number"
+                                        name="number"
+                                        id="inlineFormInputGroupUsername" 
+                                        placeholder="Tel">
+                                    </div>
                                   </div>
-                                  
                                   
                                   
                                 </div>
@@ -226,7 +246,12 @@
         </div>
 
     </div>
-   <app-footer></app-footer>
+
+    <div class="mt-30">
+      <app-footer></app-footer>
+
+    </div>
+
 </div>
 
 
