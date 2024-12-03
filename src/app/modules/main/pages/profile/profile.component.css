@@ -181,3 +181,17 @@
       padding: 8px 12px;
     }
     
+    /* Styles pour toutes les images */
+.custom-img {
+  max-width: 100%; /* L'image s'adapte toujours au conteneur */
+  height: auto; /* Garde les proportions de l'image */
+  object-fit: contain; /* Contient l'image entière sans la couper */
+}
+
+/* Réduction de la taille sur les petits écrans */
+@media (max-width: 768px) {
+  .custom-img {
+      width: 80%; /* Réduit la largeur à 80% de son conteneur */
+      margin: 0 auto; /* Centre l'image */
+  }
+}

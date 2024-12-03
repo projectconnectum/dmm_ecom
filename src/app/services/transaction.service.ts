@@ -43,7 +43,7 @@ import { api } from "../env/api.env";
 
 
       paidOrder(id:any):Observable<any>{
-        return this.http.put<any>("https://api.dreammore.co/"+'commands/orders/markaspaid/'+id,{headers:this.header});
+        return this.http.post<any>("https://api.dreammore.co/"+'commands/orders/markaspaid/'+id,{},{headers:this.header});
       };
 
 

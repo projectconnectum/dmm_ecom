@@ -408,28 +408,24 @@
       </div>
   
       <!-- Payment Method Section -->
-      <div class="mb-4">
-        <h5 class="text-2xl font-bold mb-3">Choisir un moyen de payement</h5>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card paye-card" role="button" (click)="selectedPayment='DEFAULT'" [ngClass]="{'border-orange-500 border-2': selectedPayment === 'DEFAULT'}">
-                    <img src="assets/common/assets/imgs/paye.png" style="width: 100%; heigth:100%">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card paye-card" role="button" (click)="selectedPayment='CORIS'"[ngClass]="{'border-orange-500 border-2': selectedPayment === 'CORIS'}">
-                    <img src="assets/common/assets/imgs/coris.png" style="width: 100%; heigth:100%">
-                </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <div class="card paye-card custom-img" role="button" 
+                 (click)="selectedPayment='DEFAULT'" 
+                 [ngClass]="{'border-orange-500 border-2': selectedPayment === 'DEFAULT'}">
+                <img src="assets/common/assets/imgs/paye.png" class="img-fluid " alt="Paye">
             </div>
         </div>
-
-        <div class="row">
-            <a role="button" (click)="onRechargeClick()" class="butn btn-block bg-green2 text-white radius-4 fw-500 fsz-12 text-uppercase text-center mt-20 py-3 px-5"> <span> recharger </span> </a>
-
+       
+        <div class="col-md-6 col-sm-6">
+            <div class="card paye-card custom-img" role="button" 
+                 (click)="selectedPayment='CORIS'" 
+                 [ngClass]="{'border-orange-500 border-2': selectedPayment === 'CORIS'}">
+                <img src="assets/common/assets/imgs/coris.png" class="img-fluid " alt="Coris">
+            </div>
         </div>
-
-      </div>
+    </div>
+    
     </div>
   
   </p-dialog>
